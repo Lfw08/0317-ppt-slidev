@@ -1,5 +1,5 @@
 ---
-theme: seriph
+theme: excali-slide
 background: https://4kwallpapers.com/images/wallpapers/vector-art-colorful-3840x2160-12144.jpg
 title: 1.31～2.6 深圳 港澳 珠海
 info: |
@@ -9,14 +9,15 @@ drawings:
 transition: fade
 mdc: true
 ---
-# 1.31～2.6 
-## 深圳 港澳 珠海
+# 1.31～2.6
+##
+### 深圳+港澳+珠海
 
 <PoweredBySlidev></PoweredBySlidev>
 
-
 ---
-
+layout: center
+---
 
 <v-switch>
 <template #0> ShenZhen, GuangDong, China </template>
@@ -193,6 +194,8 @@ mdc: true
 </div>
 
 ---
+layout: center
+---
 
 <v-switch>
 <template #0> Hong Kong SAR, China </template>
@@ -339,7 +342,8 @@ mdc: true
 </div>
 </v-click>
 
-
+---
+layout: center
 ---
 
 <v-switch>
@@ -370,6 +374,8 @@ mdc: true
 
 </div>
 
+---
+layout: center
 ---
 
 <v-switch>
@@ -416,6 +422,14 @@ mdc: true
 
 </div>
 
+---
+layout: center
+---
+
+# The End
+##  
+### 
+#### 2025-03-17
 
 
 
