@@ -6,7 +6,7 @@ info: |
 class: text-center
 drawings:
   persist: false
-transition: view-transition
+transition: zoom
 mdc: true
 ---
 # 1.31～2.6
