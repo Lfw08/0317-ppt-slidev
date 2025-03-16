@@ -6,7 +6,7 @@ info: |
 class: text-center
 drawings:
   persist: false
-transition: fade
+transition: view-transition
 mdc: true
 ---
 # 1.31～2.6
@@ -39,6 +39,7 @@ layout: center
 
 ---
 
+# 地铁岗厦北站
 <div
   v-motion
   :initial="{ x: -80 }"
@@ -67,7 +68,7 @@ layout: center
 
 ---
 
-#
+# 莲花山公园
 <div
   v-motion
   :initial="{ x: -80 }"
@@ -81,7 +82,7 @@ layout: center
 
 ---
 
-# 
+# 公园门口水景
 <div
   v-motion
   :initial="{ x: -80 }"
@@ -124,7 +125,7 @@ layout: center
 
 ---
 
-# 
+# 小梅沙
 <div
   v-motion
   :initial="{ x: -80 }"
@@ -138,7 +139,7 @@ layout: center
 
 ---
 
-# 
+# 深圳湾公园
 <div
   v-motion
   :initial="{ x: -80 }"
@@ -242,7 +243,7 @@ layout: center
 
 ---
 
-# 
+# 香港夜景：中環
 <div
   v-motion
   :initial="{ x: -80 }"
@@ -256,7 +257,7 @@ layout: center
 
 ---
 
-# 
+# 夜鹭
 <div
   v-motion
   :initial="{ x: -80 }"
@@ -284,7 +285,7 @@ layout: center
 
 ---
 
-# 
+# 香港 金锺 中環
 <div
   v-motion
   :initial="{ x: -80 }"
@@ -298,7 +299,7 @@ layout: center
 
 ---
 
-# 
+# 香港 九龙
 <div
   v-motion
   :initial="{ x: -80 }"
@@ -396,7 +397,7 @@ layout: center
 
 ---
 
-# 
+# 珠海 炮台山公园
 <div
   v-motion
   :initial="{ x: -80 }"
@@ -410,7 +411,7 @@ layout: center
 
 ---
 
-# 
+# 炮台山公园 望澳亭
 <div
   v-motion
   :initial="{ x: -80 }"
