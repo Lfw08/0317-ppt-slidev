@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: https://cover.sli.dev
+background: https://4kwallpapers.com/images/wallpapers/vector-art-colorful-3840x2160-12144.jpg
 title: 1.31～2.6 深圳 港澳 珠海
 info: |
 class: text-center
@@ -13,6 +13,7 @@ mdc: true
 ## 深圳 港澳 珠海
 
 <PoweredBySlidev></PoweredBySlidev>
+
 
 ---
 
@@ -33,6 +34,7 @@ mdc: true
 </div>
 </template>
 </v-switch>
+
 
 ---
 
