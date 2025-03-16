@@ -337,7 +337,7 @@ layout: center
   :leave="{ x: 80 }"
 >
 
-<img src="./images/image28.jpg" style="width: 40%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+<img src="./images/image28.jpg" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
 
 </div>
 </v-click>
