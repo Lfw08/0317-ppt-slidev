@@ -323,6 +323,23 @@ mdc: true
 
 ---
 
+
+<v-click>
+<div
+  v-motion
+  :initial="{ x: -80 }"
+  :enter="{ x: 0 }"
+  :leave="{ x: 80 }"
+>
+
+<img src="./images/image28.jpg" style="width: 40%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+
+</div>
+</v-click>
+
+
+---
+
 <v-switch>
 <template #0> Macau SAR, China </template>
 <template #1>
