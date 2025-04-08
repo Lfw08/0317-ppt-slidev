@@ -217,6 +217,7 @@ const chunkedRows = computed(() => {
 
 onMounted(() => {
   shuffledRows.value = shuffleArray([...originalRows.value])
+  localStorage.setItem('shuffledRows', JSON.stringify(shuffledRows.value))
   nextTick(() => {
     const rows = document.querySelectorAll('.fade-in-row')
     rows.forEach((row, index) => {
@@ -292,3 +293,4 @@ tr:nth-child(even) {
   }
 }
 </style>
+
