@@ -11,8 +11,8 @@ mdc: true
 ---
 
 # 滑翔机挑战赛 {.inline-block.view-transition-title}
-## 2025.4.09
-### 高一年级 直升班
+## 2025.4.10
+### 高二年级
 
 <iframe
   src="index.html"
@@ -20,12 +20,13 @@ mdc: true
   class="top-145 right--28 absolute"
 ></iframe>
 
+
+
 ---
 layout: center
 ---
 
 # 参赛选手 {.inline-block.view-transition-title}
-
 
 
 ---
@@ -50,23 +51,20 @@ import { ref, computed, onMounted, nextTick } from 'vue'
 
 // 原始表格数据
 const originalRows = ref([
-  { id: 1, cells: ['高一1班', '李天聪', '朱溥瑶'] },
-  { id: 2, cells: ['高一2班', '刘若渊', '胡继慈'] },
-  { id: 3, cells: ['高一3班', '谢子衿', '张书溢'] },
-  { id: 4, cells: ['高一4班', '张予轩', ''] },
-  { id: 5, cells: ['高一5班', '杜嘉朋', '余锦辉'] },
-  { id: 6, cells: ['高一6班', '乔婉桐', '周子皓'] },
-  { id: 7, cells: ['高一7班', '许铭禹', '李欣颐'] },
-  { id: 8, cells: ['高一8班', '李沐阳', '张镱霏'] },
-  { id: 9, cells: ['高一9班', '张佳鑫', '温泰然'] },
-  { id: 10, cells: ['高一10班', '于子钺', '暴桓安'] },
-  { id: 11, cells: ['高一11班', '王语哲', '邓宇晗'] },
-  { id: 12, cells: ['高一12班', '陈卓远', '俞博睿'] },
-  { id: 13, cells: ['高一13班', '陈天阔', '丁佳明'] },
-  { id: 14, cells: ['高一14班', '李奕乐', '张博林'] },
-  { id: 15, cells: ['高一15班', '李天艺', '赖诚明'] },
-  { id: 16, cells: ['直升1班', '刘晨笛', '胡可晗'] },
-  { id: 17, cells: ['直升2班', '卞佳馨', '王嘉翼'] },
+  { id: 1, cells: ['高二1班', '周子珺', '蔺一铭'] },
+  { id: 2, cells: ['高二2班', '徐上', '周新洋'] },
+  { id: 3, cells: ['高二3班', '张睿达', '张迅宁'] },
+  { id: 4, cells: ['高二4班', '王曦乐', '胡婉瑄'] },
+  { id: 5, cells: ['高二5班', '武成康', '张天泽'] },
+  { id: 6, cells: ['高二6班', '王紫云', '石轩宁'] },
+  { id: 7, cells: ['高二7班', '李皓轩', '戚家绮'] },
+  { id: 8, cells: ['高二8班', '单奕超', '朱钰安'] },
+  { id: 9, cells: ['高二9班', '汪楠翔', ''] },
+  { id: 10, cells: ['高二10班', '李晓瑜', '张佳宇'] },
+  { id: 11, cells: ['高二11班', '王君赫', '贺宣壹'] },
+  { id: 12, cells: ['高二12班', '李北宜', '吴亦桐'] },
+  { id: 13, cells: ['高二13班', '徐子谦', '曹天泽'] },
+  { id: 14, cells: ['高二14班', '杨皓晨', '蔡栩安'] },
 ])
 
 // 这一页不需要打乱
@@ -90,6 +88,7 @@ const chunkedRows = computed(() => {
 
 onMounted(() => {
   shuffledRows.value = shuffleArray([...originalRows.value])
+  
   nextTick(() => {
     const rows = document.querySelectorAll('.fade-in-row')
     rows.forEach((row, index) => {
@@ -104,7 +103,7 @@ onMounted(() => {
   display: flex;
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
-  gap: 30px; /* 列间距 */
+  gap: 20px; /* 列间距 */
   height: 100%; /* 使用父容器的全部高度 */
 }
 
@@ -140,7 +139,7 @@ tr:nth-child(even) {
 
 /* 滚动条样式 */
 .table-column::-webkit-scrollbar {
-  width: 2px;
+  width: 6px;
 }
 .table-column::-webkit-scrollbar-thumb {
   background: #ddd;
@@ -166,19 +165,12 @@ tr:nth-child(even) {
 }
 </style>
 
-
-
 ---
 layout: center
 ---
 
 # 比赛顺序 {.inline-block.view-transition-title}
 
-<iframe
-  src="https://lfw08.github.io"
-  style="transform: scale(4);"
-  class="top-145 right--28 absolute"
-></iframe>
 
 ---
 layout: center
@@ -202,23 +194,20 @@ import { ref, computed, onMounted, nextTick } from 'vue'
 
 // 原始表格数据
 const originalRows = ref([
-  { id: 1, cells: ['高一1班', '李天聪', '朱溥瑶'] },
-  { id: 2, cells: ['高一2班', '刘若渊', '胡继慈'] },
-  { id: 3, cells: ['高一3班', '谢子衿', '张书溢'] },
-  { id: 4, cells: ['高一4班', '张予轩', ''] },
-  { id: 5, cells: ['高一5班', '杜嘉朋', '余锦辉'] },
-  { id: 6, cells: ['高一6班', '乔婉桐', '周子皓'] },
-  { id: 7, cells: ['高一7班', '许铭禹', '李欣颐'] },
-  { id: 8, cells: ['高一8班', '李沐阳', '张镱霏'] },
-  { id: 9, cells: ['高一9班', '张佳鑫', '温泰然'] },
-  { id: 10, cells: ['高一10班', '于子钺', '暴桓安'] },
-  { id: 11, cells: ['高一11班', '王语哲', '邓宇晗'] },
-  { id: 12, cells: ['高一12班', '陈卓远', '俞博睿'] },
-  { id: 13, cells: ['高一13班', '陈天阔', '丁佳明'] },
-  { id: 14, cells: ['高一14班', '李奕乐', '张博林'] },
-  { id: 15, cells: ['高一15班', '李天艺', '赖诚明'] },
-  { id: 16, cells: ['直升1班', '刘晨笛', '胡可晗'] },
-  { id: 17, cells: ['直升2班', '卞佳馨', '王嘉翼'] },
+  { id: 1, cells: ['高二1班', '周子珺', '蔺一铭'] },
+  { id: 2, cells: ['高二2班', '徐上', '周新洋'] },
+  { id: 3, cells: ['高二3班', '张睿达', '张迅宁'] },
+  { id: 4, cells: ['高二4班', '王曦乐', '胡婉瑄'] },
+  { id: 5, cells: ['高二5班', '武成康', '张天泽'] },
+  { id: 6, cells: ['高二6班', '王紫云', '石轩宁'] },
+  { id: 7, cells: ['高二7班', '李皓轩', '戚家绮'] },
+  { id: 8, cells: ['高二8班', '单奕超', '朱钰安'] },
+  { id: 9, cells: ['高二9班', '汪楠翔', ''] },
+  { id: 10, cells: ['高二10班', '李晓瑜', '张佳宇'] },
+  { id: 11, cells: ['高二11班', '王君赫', '贺宣壹'] },
+  { id: 12, cells: ['高二12班', '李北宜', '吴亦桐'] },
+  { id: 13, cells: ['高二13班', '徐子谦', '曹天泽'] },
+  { id: 14, cells: ['高二14班', '杨皓晨', '蔡栩安'] },
 ])
 
 // Fisher-Yates 洗牌算法
@@ -323,7 +312,6 @@ tr:nth-child(even) {
 </style>
 
 
-
 ---
 layout: center
 ---
@@ -379,7 +367,7 @@ onMounted(() => {
 
 # {{ title1 }}{.inline-block.view-transition-title}
 ##
-### Next: {{ subtitle1 }}{.inline-block.view-transition-subtitle}
+### Next: {{ subtitle1 }} {.inline-block.view-transition-subtitle}
 
 <iframe
   src="https://lfw08.github.io"
@@ -758,8 +746,6 @@ onMounted(() => {
 </script>
 
 # {{ title13 }} {.inline-block.view-transition-title}
-##
-### Next: {{ subtitle13 }} {.inline-block.view-transition-subtitle}
 
 <iframe
   src="https://lfw08.github.io"
@@ -767,96 +753,4 @@ onMounted(() => {
   class="top-145 right--28 absolute"
 ></iframe>
 
----
-layout: center
----
 
-
-<script setup>
-import { ref, onMounted } from 'vue'
-
-const title14 = ref('')
-const subtitle14 = ref('')
-
-onMounted(() => {
-  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
-  if (storedRows.length > 14) {
-    const firstRow = storedRows[14]?.cells || []
-    const secondRow = storedRows[15]?.cells || []
-    title14.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
-    subtitle14.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
-  }
-})
-</script>
-
-# {{ title14 }} {.inline-block.view-transition-title}
-##
-### Next: {{ subtitle14 }} {.inline-block.view-transition-subtitle}
-
-<iframe
-  src="https://lfw08.github.io"
-  style="transform: scale(4);"
-  class="top-145 right--28 absolute"
-></iframe>
-
----
-layout: center
----
-
-
-<script setup>
-import { ref, onMounted } from 'vue'
-
-const title15 = ref('')
-const subtitle15 = ref('')
-
-onMounted(() => {
-  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
-  if (storedRows.length > 15) {
-    const firstRow = storedRows[15]?.cells || []
-    const secondRow = storedRows[16]?.cells || []
-    title15.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
-    subtitle15.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
-  }
-})
-</script>
-
-# {{ title15 }} {.inline-block.view-transition-title}
-##
-### Next: {{ subtitle15 }} {.inline-block.view-transition-subtitle}
-
-<iframe
-  src="https://lfw08.github.io"
-  style="transform: scale(4);"
-  class="top-145 right--28 absolute"
-></iframe>
-
----
-layout: center
----
-
-
-<script setup>
-import { ref, onMounted } from 'vue'
-
-const title16 = ref('')
-const subtitle16 = ref('')
-
-onMounted(() => {
-  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
-  if (storedRows.length > 16) {
-    const firstRow = storedRows[16]?.cells || []
-    const secondRow = storedRows[17]?.cells || []
-    title16.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
-    subtitle16.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
-  }
-})
-</script>
-
-# {{ title16 }} {.inline-block.view-transition-title}
-
-<iframe
-  src="https://lfw08.github.io"
-  style="transform: scale(4);"
-  class="top-145 right--28 absolute"
-></iframe>
