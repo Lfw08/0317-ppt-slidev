@@ -15,7 +15,7 @@ mdc: true
 ### 高一年级 直升班
 
 <iframe
-  src="https://lfw08.github.io"
+  src="index.html"
   style="transform: scale(4);"
   class="top-145 right--28 absolute"
 ></iframe>
@@ -339,8 +339,8 @@ onMounted(() => {
   if (storedRows.length > 0) {
     const firstRow = storedRows[0]?.cells || []
     const secondRow = storedRows[1]?.cells || []
-    title.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -371,8 +371,8 @@ onMounted(() => {
   if (storedRows.length > 1) {
     const firstRow = storedRows[1]?.cells || []
     const secondRow = storedRows[2]?.cells || []
-    title1.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle1.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title1.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle1.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -402,8 +402,8 @@ onMounted(() => {
   if (storedRows.length > 2) {
     const firstRow = storedRows[2]?.cells || []
     const secondRow = storedRows[3]?.cells || []
-    title2.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle2.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title2.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle2.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -433,8 +433,8 @@ onMounted(() => {
   if (storedRows.length > 3) {
     const firstRow = storedRows[3]?.cells || []
     const secondRow = storedRows[4]?.cells || []
-    title3.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle3.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title3.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle3.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -464,8 +464,8 @@ onMounted(() => {
   if (storedRows.length > 4) {
     const firstRow = storedRows[4]?.cells || []
     const secondRow = storedRows[5]?.cells || []
-    title4.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle4.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title4.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle4.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -496,8 +496,8 @@ onMounted(() => {
   if (storedRows.length > 5) {
     const firstRow = storedRows[5]?.cells || []
     const secondRow = storedRows[6]?.cells || []
-    title5.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle5.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title5.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle5.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -528,8 +528,8 @@ onMounted(() => {
   if (storedRows.length > 6) {
     const firstRow = storedRows[6]?.cells || []
     const secondRow = storedRows[7]?.cells || []
-    title6.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle6.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title6.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle6.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -560,8 +560,8 @@ onMounted(() => {
   if (storedRows.length > 7) {
     const firstRow = storedRows[7]?.cells || []
     const secondRow = storedRows[8]?.cells || []
-    title7.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle7.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title7.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle7.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -592,8 +592,8 @@ onMounted(() => {
   if (storedRows.length > 8) {
     const firstRow = storedRows[8]?.cells || []
     const secondRow = storedRows[9]?.cells || []
-    title8.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle8.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title8.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle8.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -623,8 +623,8 @@ onMounted(() => {
   if (storedRows.length > 9) {
     const firstRow = storedRows[9]?.cells || []
     const secondRow = storedRows[10]?.cells || []
-    title9.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle9.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title9.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle9.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -655,8 +655,8 @@ onMounted(() => {
   if (storedRows.length > 10) {
     const firstRow = storedRows[10]?.cells || []
     const secondRow = storedRows[11]?.cells || []
-    title10.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle10.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title10.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle10.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -687,8 +687,8 @@ onMounted(() => {
   if (storedRows.length > 11) {
     const firstRow = storedRows[11]?.cells || []
     const secondRow = storedRows[12]?.cells || []
-    title11.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle11.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title11.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle11.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -719,8 +719,8 @@ onMounted(() => {
   if (storedRows.length > 12) {
     const firstRow = storedRows[12]?.cells || []
     const secondRow = storedRows[13]?.cells || []
-    title12.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle12.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title12.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle12.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -751,8 +751,8 @@ onMounted(() => {
   if (storedRows.length > 13) {
     const firstRow = storedRows[13]?.cells || []
     const secondRow = storedRows[14]?.cells || []
-    title13.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle13.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title13.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle13.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -783,8 +783,8 @@ onMounted(() => {
   if (storedRows.length > 14) {
     const firstRow = storedRows[14]?.cells || []
     const secondRow = storedRows[15]?.cells || []
-    title14.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle14.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title14.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle14.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -815,8 +815,8 @@ onMounted(() => {
   if (storedRows.length > 15) {
     const firstRow = storedRows[15]?.cells || []
     const secondRow = storedRows[16]?.cells || []
-    title15.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle15.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title15.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle15.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
@@ -847,8 +847,8 @@ onMounted(() => {
   if (storedRows.length > 16) {
     const firstRow = storedRows[16]?.cells || []
     const secondRow = storedRows[17]?.cells || []
-    title16.value = `${firstRow[0]} - ${firstRow[1]}、${firstRow[2]}`
-    subtitle16.value = `${secondRow[0]} - ${secondRow[1]}、${secondRow[2]}`
+    title16.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle16.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
