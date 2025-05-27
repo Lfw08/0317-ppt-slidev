@@ -53,7 +53,9 @@ onUnmounted(() => {
 </style>
 
 # 剩余数量 {.inline-block.view-transition-title}
-##
+
+
+
 <transition name="fade">
   <span v-if="show" class="inline-block view-transition-number" style="font-size:7em">{{ animatedNumber }}</span>
 </transition>
