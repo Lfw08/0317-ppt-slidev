@@ -24,7 +24,7 @@ layout: cover
 layout: center
 ---
 
-<audio controls src="FS2020.mp3" loop autoplay></audio>
+<audio controls src="FS2020.mp3" loop></audio>
 
 ---
 layout: center
