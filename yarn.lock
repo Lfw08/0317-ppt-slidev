@@ -10693,6 +10693,11 @@ slash@^5.1.0:
   resolved "https://registry.npmmirror.com/slash/-/slash-5.1.0.tgz#be3adddcdf09ac38eebe8dcdc7b1a57a75b095ce"
   integrity sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==
 
+slidev-component-progress@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/slidev-component-progress/-/slidev-component-progress-1.1.0.tgz#7fb5c189cccde01dbceb935d53faf664de0525be"
+  integrity sha512-E7PmSvZh5RzjrumzzLE2xx/ooxQl5dO40dgPw1V/b9m+Y6P61Sv2om07ffP3G9oVmYV7cKMe1nH0yD2NrCBL+A==
+
 slidev-theme-enolive@^0.1.8:
   version "0.1.8"
   resolved "https://registry.npmmirror.com/slidev-theme-enolive/-/slidev-theme-enolive-0.1.8.tgz#ef358bc2cd906ad390e4e75637ba071a2ec6806f"

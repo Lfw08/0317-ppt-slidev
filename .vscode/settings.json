@@ -2,6 +2,9 @@
     "Codegeex.RepoIndex": true,
     "slidev.include": [
         "**/slides.md",
-        "EF.md"
-    ]
+        "EF.md",
+        "2.md",
+        "1.md"
+    ],
+    "slidev.port": 3030
 }
