@@ -1,14 +1,31 @@
 ---
 theme: unicorn
+addons:
+  - slidev-component-progress
+
+title: 你画我猜
+info: |
+class: text-center
+drawings:
+  persist: false
+transition: view-transition
+mdc: true
+layout: cover
 ---
 
 # 你画我猜
 ## Pictionary Game
 
-<div class="text-center mt-8">
-  <button @click="$slidev.nav.next" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
-    开始游戏
-  </button>
+
+
+---
+
+# 第 1 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    1
+  </div>
 </div>
 
 ---
@@ -16,8 +33,18 @@ theme: unicorn
 # 第 1 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    苹果
+  <div class="text-8xl font-bold">
+    魔方
+  </div>
+</div>
+
+---
+
+# 第 2 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    2
   </div>
 </div>
 
@@ -26,8 +53,18 @@ theme: unicorn
 # 第 2 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    太阳
+  <div class="text-8xl font-bold">
+    蒸汽机
+  </div>
+</div>
+
+---
+
+# 第 3 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    3
   </div>
 </div>
 
@@ -36,8 +73,18 @@ theme: unicorn
 # 第 3 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    房子
+  <div class="text-8xl font-bold">
+    指南针
+  </div>
+</div>
+
+---
+
+# 第 4 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    4
   </div>
 </div>
 
@@ -46,8 +93,18 @@ theme: unicorn
 # 第 4 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    猫
+  <div class="text-8xl font-bold">
+    蜂巢
+  </div>
+</div>
+
+---
+
+# 第 5 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    5
   </div>
 </div>
 
@@ -56,8 +113,18 @@ theme: unicorn
 # 第 5 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    树
+  <div class="text-8xl font-bold">
+    热气球
+  </div>
+</div>
+
+---
+
+# 第 6 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    6
   </div>
 </div>
 
@@ -66,8 +133,18 @@ theme: unicorn
 # 第 6 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    汽车
+  <div class="text-8xl font-bold">
+    手风琴
+  </div>
+</div>
+
+---
+
+# 第 7 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    7
   </div>
 </div>
 
@@ -76,8 +153,18 @@ theme: unicorn
 # 第 7 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    椅子
+  <div class="text-8xl font-bold">
+    浪
+  </div>
+</div>
+
+---
+
+# 第 8 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    8
   </div>
 </div>
 
@@ -86,8 +173,18 @@ theme: unicorn
 # 第 8 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    书
+  <div class="text-8xl font-bold">
+    望远镜
+  </div>
+</div>
+
+---
+
+# 第 9 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    9
   </div>
 </div>
 
@@ -96,8 +193,18 @@ theme: unicorn
 # 第 9 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    花
+  <div class="text-8xl font-bold">
+    船锚
+  </div>
+</div>
+
+---
+
+# 第 10 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    10
   </div>
 </div>
 
@@ -106,8 +213,18 @@ theme: unicorn
 # 第 10 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    雨伞
+  <div class="text-8xl font-bold">
+    月蚀
+  </div>
+</div>
+
+---
+
+# 第 11 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    11
   </div>
 </div>
 
@@ -116,8 +233,18 @@ theme: unicorn
 # 第 11 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    火箭
+  <div class="text-8xl font-bold">
+    沙漏
+  </div>
+</div>
+
+---
+
+# 第 12 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    12
   </div>
 </div>
 
@@ -126,8 +253,18 @@ theme: unicorn
 # 第 12 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    自行车
+  <div class="text-8xl font-bold">
+    钥匙孔
+  </div>
+</div>
+
+---
+
+# 第 13 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    13
   </div>
 </div>
 
@@ -136,8 +273,18 @@ theme: unicorn
 # 第 13 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    望远镜
+  <div class="text-8xl font-bold">
+    立交桥
+  </div>
+</div>
+
+---
+
+# 第 14 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    14
   </div>
 </div>
 
@@ -146,8 +293,18 @@ theme: unicorn
 # 第 14 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    闹钟
+  <div class="text-8xl font-bold">
+    纸飞机
+  </div>
+</div>
+
+---
+
+# 第 15 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    15
   </div>
 </div>
 
@@ -156,8 +313,18 @@ theme: unicorn
 # 第 15 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    钢琴
+  <div class="text-8xl font-bold">
+    温室
+  </div>
+</div>
+
+---
+
+# 第 16 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    16
   </div>
 </div>
 
@@ -166,8 +333,18 @@ theme: unicorn
 # 第 16 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    螃蟹
+  <div class="text-8xl font-bold">
+    盾牌
+  </div>
+</div>
+
+---
+
+# 第 17 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    17
   </div>
 </div>
 
@@ -176,8 +353,18 @@ theme: unicorn
 # 第 17 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    皇冠
+  <div class="text-8xl font-bold">
+    章鱼
+  </div>
+</div>
+
+---
+
+# 第 18 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    18
   </div>
 </div>
 
@@ -186,8 +373,18 @@ theme: unicorn
 # 第 18 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    鲨鱼
+  <div class="text-8xl font-bold">
+    磁悬浮列车
+  </div>
+</div>
+
+---
+
+# 第 19 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    19
   </div>
 </div>
 
@@ -196,8 +393,18 @@ theme: unicorn
 # 第 19 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    骆驼
+  <div class="text-8xl font-bold">
+    马戏团
+  </div>
+</div>
+
+---
+
+# 第 20 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    20
   </div>
 </div>
 
@@ -206,8 +413,18 @@ theme: unicorn
 # 第 20 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    冰淇淋
+  <div class="text-8xl font-bold">
+    灯塔
+  </div>
+</div>
+
+---
+
+# 第 21 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    21
   </div>
 </div>
 
@@ -216,8 +433,18 @@ theme: unicorn
 # 第 21 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    机器人
+  <div class="text-8xl font-bold">
+    钻石
+  </div>
+</div>
+
+---
+
+# 第 22 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    22
   </div>
 </div>
 
@@ -226,8 +453,18 @@ theme: unicorn
 # 第 22 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    金字塔
+  <div class="text-8xl font-bold">
+    鼠标
+  </div>
+</div>
+
+---
+
+# 第 23 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    23
   </div>
 </div>
 
@@ -236,8 +473,18 @@ theme: unicorn
 # 第 23 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    海盗船
+  <div class="text-8xl font-bold">
+    萤火虫
+  </div>
+</div>
+
+---
+
+# 第 24 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    24
   </div>
 </div>
 
@@ -246,8 +493,18 @@ theme: unicorn
 # 第 24 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    潜水艇
+  <div class="text-8xl font-bold">
+    蜘蛛网
+  </div>
+</div>
+
+---
+
+# 第 25 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    25
   </div>
 </div>
 
@@ -256,8 +513,18 @@ theme: unicorn
 # 第 25 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    热气球
+  <div class="text-8xl font-bold">
+    口琴
+  </div>
+</div>
+
+---
+
+# 第 26 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    26
   </div>
 </div>
 
@@ -266,8 +533,18 @@ theme: unicorn
 # 第 26 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    袋鼠
+  <div class="text-8xl font-bold">
+    冰山
+  </div>
+</div>
+
+---
+
+# 第 27 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    27
   </div>
 </div>
 
@@ -276,8 +553,18 @@ theme: unicorn
 # 第 27 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    芭蕾舞
+  <div class="text-8xl font-bold">
+    迷宫
+  </div>
+</div>
+
+---
+
+# 第 28 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    28
   </div>
 </div>
 
@@ -286,8 +573,18 @@ theme: unicorn
 # 第 28 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    龙卷风
+  <div class="text-8xl font-bold">
+    打印机
+  </div>
+</div>
+
+---
+
+# 第 29 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    29
   </div>
 </div>
 
@@ -296,8 +593,18 @@ theme: unicorn
 # 第 29 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-bounce">
-    长颈鹿
+  <div class="text-8xl font-bold">
+    皮影戏
+  </div>
+</div>
+
+---
+
+# 第 30 页
+
+<div class="flex items-center justify-center h-full">
+  <div class="text-8xl font-bold">
+    30
   </div>
 </div>
 
@@ -306,8 +613,8 @@ theme: unicorn
 # 第 30 题
 
 <div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold animate-pulse">
-    火箭
+  <div class="text-8xl font-bold">
+    极光
   </div>
 </div>
 
