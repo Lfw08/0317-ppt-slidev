@@ -340,6 +340,11 @@
   resolved "https://registry.npmmirror.com/@braintree/sanitize-url/-/sanitize-url-7.1.1.tgz"
   integrity sha512-i1L7noDNxtFyL5DmZafWy1wRVhGehQmzZaz1HiN5e7iylJMSZR7ekOV7NsIqa5qBldlLrsKv4HbgFUVlQrz8Mw==
 
+"@catppuccin/palette@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.npmmirror.com/@catppuccin/palette/-/palette-1.7.1.tgz#c7cd165dcc1fc025a05ac138a4749b2279cf115e"
+  integrity sha512-aRc1tbzrevOTV7nFTT9SRdF26w/MIwT4Jwt4fDMc9itRZUDXCuEDBLyz4TQMlqO9ZP8mf5Hu4Jr6D03NLFc6Gw==
+
 "@chevrotain/cst-dts-gen@11.0.3":
   version "11.0.3"
   resolved "https://registry.npmmirror.com/@chevrotain/cst-dts-gen/-/cst-dts-gen-11.0.3.tgz"
@@ -1015,6 +1020,13 @@
     cross-spawn "^7.0.3"
     string-argv "^0.3.1"
     type-detect "^4.0.8"
+
+"@ktym4a/slidev-theme-ktym4a@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.npmmirror.com/@ktym4a/slidev-theme-ktym4a/-/slidev-theme-ktym4a-0.3.2.tgz#e72cf3bdc2c7ab4b64fa716904cd75d03d1cc974"
+  integrity sha512-i8wDTI/OFt5zB4I/MSmeXagvchsUOy3GYhvBYf12pdvPgNLE363UlfFP3VYzcohDb3h8Grqt8LCm+Ix1txw4AQ==
+  dependencies:
+    "@catppuccin/palette" "^1.7.1"
 
 "@leichtgewicht/ip-codec@^2.0.1":
   version "2.0.5"
