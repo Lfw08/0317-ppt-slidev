@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026元旦联欢 - 烟花庆典</title>
+  <style>
+    /* ========== 全局样式 ========== */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      /* 渐变背景：从深蓝到紫黑色，营造夜空氛围 */
+      background: linear-gradient(to bottom, #0a0a2e 0%, #1a0a2e 50%, #2d1b4e 100%);
+    }
+
+    /* Canvas 设置 */
+    canvas {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* ========== 元旦祝福文字样式 ========== */
+    .title-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+      pointer-events: none; /* 允许点击穿透文字 */
+    }
+
+    .greeting {
+      font-size: 4rem;
+      color: #fff;
+      text-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.9),
+        0 0 30px rgba(255, 105, 180, 0.7),
+        0 0 45px rgba(255, 105, 180, 0.5);
+      margin-top: 0;
+      font-family: 'Microsoft YaHei', 'SimHei', sans-serif;
+      letter-spacing: 15px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* 祝福文字脉冲动画 */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+      }
+    }
+
+    /* 底部祝福语 */
+    .footer-greeting {
+      position: absolute;
+      bottom: 50px;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-size: 1.8rem;
+      text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.8),
+        0 0 20px rgba(255, 105, 180, 0.6),
+        0 0 30px rgba(255, 105, 180, 0.4);
+      font-family: 'Microsoft YaHei', sans-serif;
+      z-index: 10;
+      pointer-events: none;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 1;
+    }
+
+    /* 祝福语淡出效果 */
+    .footer-greeting.fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- 主画布：用于绘制烟花和星星 -->
+  <canvas id="fireworksCanvas"></canvas>
+  
+  <!-- 元旦祝福文字 -->
+  <!--
+  <div class="title-container">
+    <div class="greeting">元旦快乐</div>
+  </div>
+  -->
+  
+  <!-- 底部祝福语（动态切换） -->
+  <div class="footer-greeting" id="footerGreeting"></div>
+
+  <script>
+    // ========== 初始化 Canvas ==========
+    const canvas = document.getElementById('fireworksCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // ========== 烟花和粒子数组 ==========
+    const fireworks = [];      // 存储正在上升的烟花
+    const particles = [];      // 存储爆炸后的粒子
+    const stars = [];          // 存储背景星星
+    const balloons = [];       // 存储上升的气球
+    let currentGreetingIndex = 0;  // 当前祝福语索引
+
+    // ========== 配置参数（可修改）==========
+    const CONFIG = {
+      fireworkFrequency: 0.02,    // 烟花发射频率（0-1，越大越频繁）
+      trailLength: 15,            // 烟花尾迹长度
+      particleCountMin: 50,       // 爆炸粒子最小数量
+      particleCountMax: 100,      // 爆炸粒子最大数量
+      starCount: 70,             // 背景星星数量
+      gravity: 0.1,              // 重力系数
+      friction: 0.98,             // 空气阻力系数
+      balloonCount: 1,            // 气球数量
+      balloonSpeedMin: 1.0,       // 气球上升最小速度
+      balloonSpeedMax: 1.5,       // 气球上升最大速度
+      greetingInterval: 5000     // 祝福语切换间隔（毫秒）
+    };
+
+    // ========== 星星类（背景装饰）==========
+    class Star {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height * 0.7; // 星星只出现在上半部分
+        this.size = Math.random() * 2 + 0.5;          // 星星大小
+        this.opacity = Math.random() * 0.5 + 0.3;     // 星星透明度
+        this.twinkleSpeed = Math.random() * 0.02 + 0.01; // 闪烁速度
+        this.twinkleDirection = 1;                    // 闪烁方向
+      }
+
+      // 更新星星闪烁效果
+      update() {
+        this.opacity += this.twinkleSpeed * this.twinkleDirection;
+        if (this.opacity >= 0.8 || this.opacity <= 0.2) {
+          this.twinkleDirection *= -1; // 反转闪烁方向
+        }
+      }
+
+      // 绘制星星
+      draw() {
+        ctx.globalAlpha = this.opacity;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    // ========== 烟花类（上升阶段）==========
+    class Firework {
+      constructor(x, y, targetX, targetY, colorType) {
+        this.x = x;              // 起始X坐标
+        this.y = y;              // 起始Y坐标
+        this.targetX = targetX;  // 目标X坐标
+        this.targetY = targetY;  // 目标Y坐标
+        this.speed = 3 + Math.random() * 2;  // 上升速度（随机）
+        this.angle = Math.atan2(targetY - y, targetX - x); // 计算发射角度
+        this.trail = [];         // 尾迹数组
+        this.colorType = colorType; // 烟花颜色类型
+      }
+
+      // 更新烟花位置
+      update() {
+        // 添加当前位置到尾迹
+        this.trail.push({ x: this.x, y: this.y });
+        // 限制尾迹长度
+        if (this.trail.length > CONFIG.trailLength) {
+          this.trail.shift();
+        }
+
+        // 计算速度分量
+        const velocityX = Math.cos(this.angle) * this.speed;
+        const velocityY = Math.sin(this.angle) * this.speed;
+
+        // 更新位置
+        this.x += velocityX;
+        this.y += velocityY;
+
+        // 检测是否到达目标位置
+        const distanceToTarget = Math.hypot(this.targetX - this.x, this.targetY - this.y);
+        if (distanceToTarget < this.speed) {
+          this.explode(); // 到达目标，触发爆炸
+          return true;   // 返回true表示烟花已爆炸
+        }
+        return false;    // 返回false表示烟花仍在上升
+      }
+
+      // 爆炸效果：生成粒子
+      explode() {
+        const particleCount = CONFIG.particleCountMin + Math.random() * (CONFIG.particleCountMax - CONFIG.particleCountMin);
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle(this.targetX, this.targetY, this.colorType));
+        }
+      }
+
+      // 绘制烟花（上升阶段）
+      draw() {
+        // 绘制尾迹
+        if (this.trail.length > 0) {
+          ctx.beginPath();
+          ctx.moveTo(this.trail[0].x, this.trail[0].y);
+          for (let i = 1; i < this.trail.length; i++) {
+            ctx.lineTo(this.trail[i].x, this.trail[i].y);
+          }
+          ctx.lineTo(this.x, this.y);
+          // 尾迹渐变颜色
+          const gradient = ctx.createLinearGradient(
+            this.trail[0].x, this.trail[0].y,
+            this.x, this.y
+          );
+          gradient.addColorStop(0, 'rgba(255, 255, 255, 0.1)');
+          gradient.addColorStop(1, 'rgba(255, 255, 255, 0.8)');
+          ctx.strokeStyle = gradient;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        }
+
+        // 绘制烟花头部
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.fill();
+      }
+    }
+
+    // ========== 粒子类（爆炸后的火花）==========
+    class Particle {
+      constructor(x, y, colorType) {
+        this.x = x;
+        this.y = y;
+        this.speed = Math.random() * 5 + 2;  // 粒子速度
+        this.angle = Math.random() * Math.PI * 2; // 随机方向
+        this.life = 100 + Math.random() * 50; // 粒子生命周期
+        this.maxLife = this.life;
+        this.opacity = 1;
+        this.size = Math.random() * 3 + 1;    // 粒子大小
+        this.colorType = colorType;           // 颜色类型
+        this.color = this.getColor();         // 获取颜色
+      }
+
+      // 根据颜色类型获取颜色
+      getColor() {
+        const colorSchemes = {
+          'gold': `hsl(${45 + Math.random() * 15}, 100%, ${50 + Math.random() * 20}%)`,      // 金色系
+          'red': `hsl(${0 + Math.random() * 30}, 100%, ${50 + Math.random() * 20}%)`,       // 红色系
+          'blue': `hsl(${200 + Math.random() * 40}, 100%, ${50 + Math.random() * 20}%)`,    // 蓝色系
+          'purple': `hsl(${270 + Math.random() * 30}, 100%, ${50 + Math.random() * 20}%)`,  // 紫色系
+          'green': `hsl(${100 + Math.random() * 40}, 100%, ${50 + Math.random() * 20}%)`,   // 绿色系
+          'rainbow': `hsl(${Math.random() * 360}, 100%, 60%)`                                // 彩虹色
+        };
+        return colorSchemes[this.colorType] || colorSchemes['rainbow'];
+      }
+
+      // 更新粒子位置和状态
+      update() {
+        // 水平移动
+        this.x += Math.cos(this.angle) * this.speed;
+        // 垂直移动（受重力影响）
+        this.y += Math.sin(this.angle) * this.speed;
+        this.speed *= CONFIG.friction;  // 应用空气阻力
+        this.y += CONFIG.gravity;       // 应用重力
+
+        // 更新生命周期
+        this.life -= 1;
+        this.opacity = Math.max(this.life / this.maxLife, 0);
+
+        return this.life <= 0; // 返回true表示粒子已消失
+      }
+
+      // 绘制粒子
+      draw() {
+        ctx.globalAlpha = this.opacity;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        
+        // 添加发光效果
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = this.color;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    // ========== 颜色类型数组（用于随机选择）==========
+    const colorTypes = ['gold', 'red', 'blue', 'purple', 'green', 'rainbow'];
+
+    // ========== 气球类（背景装饰）==========
+    class Balloon {
+      constructor() {
+        this.x = Math.random() * canvas.width;  // 气球X位置
+        this.y = canvas.height + Math.random() * 100; // 气球Y位置（从屏幕下方开始）
+        this.speed = CONFIG.balloonSpeedMin + Math.random() * (CONFIG.balloonSpeedMax - CONFIG.balloonSpeedMin); // 上升速度
+        this.size = 20 + Math.random() * 20;    // 气球大小
+        this.wobbleSpeed = 0.02 + Math.random() * 0.03; // 摇摆速度
+        this.wobbleAmount = 0.5 + Math.random() * 1;    // 摇摆幅度
+        this.wobbleOffset = Math.random() * Math.PI * 2; // 摇摆偏移
+        this.color = this.getRandomColor();    // 气球颜色
+        this.stringLength = 40 + Math.random() * 30; // 气球绳子长度
+      }
+
+      // 获取随机气球颜色
+      getRandomColor() {
+        const colors = [
+          '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', 
+          '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F',
+          '#BB8FCE', '#85C1E9', '#F8B500', '#FF69B4'
+        ];
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      // 更新气球位置
+      update() {
+        this.y -= this.speed; // 向上移动
+        // 左右摇摆效果
+        this.wobbleOffset += this.wobbleSpeed;
+        this.x += Math.sin(this.wobbleOffset) * this.wobbleAmount;
+
+        // 如果气球飞出屏幕顶部，重置到底部
+        if (this.y < -this.size - this.stringLength) {
+          this.y = canvas.height + this.size + Math.random() * 100;
+          this.x = Math.random() * canvas.width;
+        }
+      }
+
+      // 绘制气球
+      draw() {
+        ctx.save();
+        
+        // 绘制气球绳子
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y + this.size);
+        ctx.quadraticCurveTo(
+          this.x + Math.sin(this.wobbleOffset * 2) * 5,
+          this.y + this.size + this.stringLength / 2,
+          this.x,
+          this.y + this.size + this.stringLength
+        );
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        // 绘制气球本体（椭圆）
+        ctx.beginPath();
+        ctx.ellipse(this.x, this.y, this.size * 0.8, this.size, 0, 0, Math.PI * 2);
+        
+        // 气球渐变填充
+        const gradient = ctx.createRadialGradient(
+          this.x - this.size * 0.3, this.y - this.size * 0.3, 0,
+          this.x, this.y, this.size
+        );
+        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
+        gradient.addColorStop(0.3, this.color);
+        gradient.addColorStop(1, this.darkenColor(this.color, 30));
+        ctx.fillStyle = gradient;
+        ctx.fill();
+
+        // 绘制气球高光
+        ctx.beginPath();
+        ctx.ellipse(
+          this.x - this.size * 0.25, 
+          this.y - this.size * 0.25, 
+          this.size * 0.2, 
+          this.size * 0.15, 
+          -Math.PI / 4, 
+          0, 
+          Math.PI * 2
+        );
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.fill();
+
+        // 绘制气球底部的小结
+        ctx.beginPath();
+        ctx.moveTo(this.x - this.size * 0.15, this.y + this.size);
+        ctx.lineTo(this.x + this.size * 0.15, this.y + this.size);
+        ctx.lineTo(this.x, this.y + this.size + 8);
+        ctx.closePath();
+        ctx.fillStyle = this.color;
+        ctx.fill();
+
+        ctx.restore();
+      }
+
+      // 加深颜色（用于阴影效果）
+      darkenColor(color, percent) {
+        const num = parseInt(color.replace('#', ''), 16);
+        const amt = Math.round(2.55 * percent);
+        const R = Math.max((num >> 16) - amt, 0);
+        const G = Math.max((num >> 8 & 0x00FF) - amt, 0);
+        const B = Math.max((num & 0x0000FF) - amt, 0);
+        return '#' + (0x1000000 + R * 0x10000 + G * 0x100 + B).toString(16).slice(1);
+      }
+    }
+
+    // ========== 30条新年祝福语数组 ==========
+    const greetings = [
+      '✨ 新年新气象，万事皆如意 ✨',
+      '🎊 辞旧迎新，福满人间 🎊',
+      '🎆 烟花绽放，好运连连 🎆',
+      '🌟 岁岁平安，年年有余 🌟',
+      '🎉 元旦快乐，心想事成 🎉',
+      '💫 愿你新的一年，前程似锦 💫',
+      '🌈 彩虹绽放，梦想成真 🌈',
+      '🎁 新年快乐，福气满满 🎁',
+      '✨ 喜气洋洋，万事如意 ✨',
+      '🎊 岁月如歌，幸福安康 🎊',
+      '🎆 辞旧岁，迎新年，好运来 🎆',
+      '🌟 元旦佳节，欢乐祥和 🌟',
+      '🎉 新年新起点，梦想新起航 🎉',
+      '💫 愿你新年快乐，万事顺心 💫',
+      '🌈 祝福满满，幸福年年 🌈',
+      '🎁 欢度元旦，喜迎新春 🎁',
+      '✨ 新年快乐，阖家幸福 ✨',
+      '🎊 岁月静好，福星高照 🎊',
+      '🎆 烟花璀璨，好运连连 🎆',
+      '🌟 元旦佳节，欢乐无限 🌟',
+      '🎉 新年快乐，心想事成 🎉',
+      '💫 愿你新的一年，万事如意 💫',
+      '🌈 彩虹闪耀，梦想飞扬 🌈',
+      '🎁 福气满满，喜气洋洋 🎁',
+      '✨ 元旦快乐，幸福安康 ✨',
+      '🎊 新年新气象，好运常相伴 🎊',
+      '🎆 烟花烂漫，幸福满满 🎆',
+      '🌟 岁月如歌，欢声笑语 🌟',
+      '🎉 元旦佳节，福满人间 🎉',
+      '💫 愿你新年快乐，万事顺遂 💫'
+    ];
+
+    // ========== 初始化背景星星 ==========
+    function initStars() {
+      for (let i = 0; i < CONFIG.starCount; i++) {
+        stars.push(new Star());
+      }
+    }
+
+    // ========== 初始化气球 ==========
+    function initBalloons() {
+      for (let i = 0; i < CONFIG.balloonCount; i++) {
+        const balloon = new Balloon();
+        // 让气球初始分布在屏幕不同高度
+        balloon.y = canvas.height - Math.random() * canvas.height;
+        balloons.push(balloon);
+      }
+    }
+
+    // ========== 切换祝福语 ==========
+    function switchGreeting() {
+      const footerGreeting = document.getElementById('footerGreeting');
+      if (footerGreeting) {
+        // 淡出当前祝福语
+        footerGreeting.classList.add('fade-out');
+        
+        setTimeout(() => {
+          // 更新祝福语内容
+          currentGreetingIndex = (currentGreetingIndex + 1) % greetings.length;
+          footerGreeting.textContent = greetings[currentGreetingIndex];
+          
+          // 淡入新祝福语
+          footerGreeting.classList.remove('fade-out');
+        }, 500); // 等待淡出动画完成
+      }
+    }
+
+    // ========== 启动祝福语定时切换 ==========
+    function startGreetingRotation() {
+      // 初始显示第一条祝福语
+      const footerGreeting = document.getElementById('footerGreeting');
+      if (footerGreeting) {
+        footerGreeting.textContent = greetings[0];
+      }
+      
+      // 每隔指定时间切换祝福语
+      setInterval(switchGreeting, CONFIG.greetingInterval);
+    }
+
+    // ========== 动画主循环 ==========
+    function animate() {
+      // 清除画布（使用半透明黑色，产生拖尾效果）
+      ctx.fillStyle = 'rgba(10, 10, 46, 0.15)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // ========== 更新和绘制气球（在最底层）==========
+      balloons.forEach(balloon => {
+        balloon.update();
+        balloon.draw();
+      });
+
+      // ========== 更新和绘制星星 ==========
+      stars.forEach(star => {
+        star.update();
+        star.draw();
+      });
+
+      // ========== 随机发射新烟花 ==========
+      if (Math.random() < CONFIG.fireworkFrequency) {
+        const startX = Math.random() * canvas.width;  // 起始X位置
+        const startY = canvas.height;                 // 起始Y位置（底部）
+        const targetX = Math.random() * canvas.width; // 目标X位置
+        const targetY = Math.random() * canvas.height * 0.6; // 目标Y位置（上半部分）
+        const colorType = colorTypes[Math.floor(Math.random() * colorTypes.length)]; // 随机颜色类型
+        fireworks.push(new Firework(startX, startY, targetX, targetY, colorType));
+      }
+
+      // ========== 更新和绘制烟花 ==========
+      fireworks.forEach((firework, index) => {
+        if (firework.update()) {
+          fireworks.splice(index, 1); // 烟花爆炸后从数组中移除
+        }
+        firework.draw();
+      });
+
+      // ========== 更新和绘制粒子 ==========
+      particles.forEach((particle, index) => {
+        if (particle.update()) {
+          particles.splice(index, 1); // 粒子消失后从数组中移除
+        }
+        particle.draw();
+      });
+
+      // 请求下一帧动画
+      requestAnimationFrame(animate);
+    }
+
+    // ========== 窗口大小调整事件 ==========
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      // 重新初始化星星和气球以适应新尺寸
+      stars.length = 0;
+      balloons.length = 0;
+      initStars();
+      initBalloons();
+    });
+
+    // ========== 点击发射烟花（交互功能）==========
+    window.addEventListener('click', (e) => {
+      const startX = canvas.width / 2;  // 从屏幕底部中心发射
+      const startY = canvas.height;
+      const targetX = e.clientX;        // 点击位置为目标
+      const targetY = e.clientY;
+      const colorType = colorTypes[Math.floor(Math.random() * colorTypes.length)];
+      fireworks.push(new Firework(startX, startY, targetX, targetY, colorType));
+    });
+
+    // ========== 启动动画 ==========
+    initStars();         // 初始化星星
+    initBalloons();      // 初始化气球
+    startGreetingRotation(); // 启动祝福语切换
+    animate();           // 开始动画循环
+  </script>
+</body>
+</html>

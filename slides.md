@@ -1,9 +1,10 @@
 ---
-theme: unicorn
-
-title: 你画我猜
+theme: seriph
+addons:
+  - slidev-component-progress
+title: 高三6班元旦联欢
 info: |
-class: text-center
+class: 'fireworks-background'
 drawings:
   persist: false
 transition: view-transition
@@ -11,42 +12,59 @@ mdc: true
 layout: cover
 ---
 
+<iframe src="/fireworks.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: -1;"></iframe>
+
 # 高三 6 班元旦联欢 {.inline-block.view-transition-title}
+
+## 2025-12-31
 
 ---
 layout: cover
 ---
+
+<iframe src="/fireworks.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 0;"></iframe>
 
 # 包饺子 {.inline-block.view-transition-title}
 
 ---
 layout: cover
+class: 'fireworks-background'
 ---
+
+<iframe src="/fireworks.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 0;"></iframe>
 
 # 生日会 {.inline-block.view-transition-title}
 ---
 layout: cover
+class: 'fireworks-background'
 ---
+
+<iframe src="/fireworks.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 0;"></iframe>
 
 # 生日会 {.inline-block.view-transition-title}
-## 
-### 2025 年 12 月至 2026 年 1 月过生日的同学：
 
-#### 内容占位符
+## 2025 年 12 月至 2026 年 1 月过生日的同学：
+### 
+#### 陈智宁、蒋道颐、王紫云、赵星寓、焦禹涵、赵梓彤、高海洋
+
+
+---
+---
+
+<iframe src="/fireworks.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: -1;"></iframe>
+
 
 ---
 layout: cover
+background: https://4kwallpapers.com/images/wallpapers/vector-art-colorful-3840x2160-12144.jpg
 ---
 
-# 
----
-layout: cover
----
 
 # 歌曲飞花令 {.inline-block.view-transition-title}
 
 ---
 layout: cover
+background: https://4kwallpapers.com/images/wallpapers/vector-art-colorful-3840x2160-12144.jpg
 ---
 
 # 你画我猜 {.inline-block.view-transition-title}
@@ -54,6 +72,7 @@ layout: cover
 ## Pictionary Game
 
 ---
+
 
 # 第 1 页
 
@@ -64,6 +83,7 @@ layout: cover
 </div>
 
 ---
+
 
 # 第 1 题
 
@@ -653,6 +673,8 @@ layout: cover
   </div>
 </div>
 
+---
+layout: cover
 ---
 
 # 游戏结束 🎉 {.inline-block.view-transition-title}

@@ -633,11 +633,5 @@ layout: cover
 
 # 游戏结束 🎉
 
-<div class="text-center">
-  <h2 class="text-6xl mb-8">感谢参与！</h2>
-  <p class="text-3xl mb-8">请统计各组最终得分</p>
-  
-  <button @click="$slidev.nav.go(0)" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
-    重新开始
-  </button>
-</div>
+---
+
