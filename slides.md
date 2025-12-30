@@ -1,7 +1,5 @@
 ---
-theme: excali-slide
-addons:
-  - slidev-component-progress
+theme: unicorn
 
 title: 你画我猜
 info: |
@@ -13,23 +11,41 @@ mdc: true
 layout: cover
 ---
 
-# 高三6班元旦联欢
+# 高三 6 班元旦联欢
+
 ---
-layout: title
+layout: cover
+---
+
+# 包饺子
+
+---
+layout: cover
 ---
 
 # 生日会
-
+--
 ---
 
 # 生日会
 ## 
+### 2025 年 12 月至 2026 年 1 月过生日的同学：
+
+#### 内容占位符
+
+---
+layout: cover
+---
+
+# 歌曲飞花令
+
+---
+layout: cover
 ---
 
 # 你画我猜
+
 ## Pictionary Game
-
-
 
 ---
 
