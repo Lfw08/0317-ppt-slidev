@@ -11,23 +11,24 @@ mdc: true
 layout: cover
 ---
 
-# 高三 6 班元旦联欢
+# 高三 6 班元旦联欢 {.inline-block.view-transition-title}
 
 ---
 layout: cover
 ---
 
-# 包饺子
+# 包饺子 {.inline-block.view-transition-title}
 
 ---
 layout: cover
 ---
 
-# 生日会
---
+# 生日会 {.inline-block.view-transition-title}
+---
+layout: cover
 ---
 
-# 生日会
+# 生日会 {.inline-block.view-transition-title}
 ## 
 ### 2025 年 12 月至 2026 年 1 月过生日的同学：
 
@@ -37,13 +38,13 @@ layout: cover
 layout: cover
 ---
 
-# 歌曲飞花令
+# 歌曲飞花令 {.inline-block.view-transition-title}
 
 ---
 layout: cover
 ---
 
-# 你画我猜
+# 你画我猜 {.inline-block.view-transition-title}
 
 ## Pictionary Game
 
@@ -649,13 +650,6 @@ layout: cover
 
 ---
 
-# 游戏结束 🎉
+# 游戏结束 🎉 {.inline-block.view-transition-title}
 
-<div class="text-center">
-  <h2 class="text-6xl mb-8">感谢参与！</h2>
-  <p class="text-3xl mb-8">请统计各组最终得分</p>
-  
-  <button @click="$slidev.nav.go(0)" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
-    重新开始
-  </button>
-</div>
+
