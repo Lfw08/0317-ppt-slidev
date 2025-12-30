@@ -1,5 +1,5 @@
 ---
-theme: '@ktym4a/slidev-theme-ktym4a'
+theme: excali-slide
 addons:
   - slidev-component-progress
 
@@ -12,6 +12,17 @@ transition: view-transition
 mdc: true
 layout: cover
 ---
+
+
+# 高三6班2026年元旦联欢活动
+
+---
+
+
+
+
+
+
 
 # 你画我猜
 ## Pictionary Game
