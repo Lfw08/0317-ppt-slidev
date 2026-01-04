@@ -607,6 +607,8 @@ onUnmounted(() => {
 
 ## 2025-12-31
 
+<PoweredBySlidev></PoweredBySlidev>
+
 ---
 layout: cover
 ---
