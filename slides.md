@@ -1,1273 +1,1145 @@
 ---
-theme: seriph
+theme: unicorn
 addons:
   - slidev-component-progress
-title: 高三6班元旦联欢
+
+title: 滑翔机挑战赛
 info: |
-class: 'fireworks-background'
+class: text-center
 drawings:
   persist: false
 transition: view-transition
 mdc: true
 layout: cover
+css: |
+  /* Liquid Glass Base Styles */
+  :root {
+    --glass-bg-1: rgba(255, 255, 255, 0.15);
+    --glass-bg-2: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-shadow: rgba(0, 0, 0, 0.1);
+    --liquid-primary: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --liquid-secondary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --liquid-tertiary: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --liquid-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --blur-amount: blur(20px);
+    --blur-heavy: blur(40px);
+  }
+
+  .slide-container {
+    background: linear-gradient(135deg, 
+      #1a1a2e 0%, 
+      #16213e 25%, 
+      #0f3460 50%, 
+      #1a1a2e 75%, 
+      #16213e 100%);
+    background-size: 400% 400%;
+    animation: liquidFlow 15s ease infinite;
+  }
+
+  @keyframes liquidFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Glass Card Effect */
+  .glass-card {
+    background: var(--glass-bg-1);
+    backdrop-filter: var(--blur-amount);
+    -webkit-backdrop-filter: var(--blur-amount);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 
+      0 8px 32px 0 var(--glass-shadow),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: glassShine 3s ease-in-out infinite;
+  }
+
+  @keyframes glassShine {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+  }
+
+  /* Liquid Bubble Background */
+  .liquid-bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, 
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 70%);
+    backdrop-filter: blur(2px);
+    animation: floatUp 20s infinite ease-in-out;
+  }
+
+  .bubble:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    left: -100px;
+    bottom: -100px;
+    animation-delay: 0s;
+    background: var(--liquid-primary);
+    opacity: 0.3;
+  }
+
+  .bubble:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    right: -50px;
+    top: 10%;
+    animation-delay: -5s;
+    background: var(--liquid-secondary);
+    opacity: 0.25;
+  }
+
+  .bubble:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    left: 30%;
+    top: -50px;
+    animation-delay: -10s;
+    background: var(--liquid-tertiary);
+    opacity: 0.2;
+  }
+
+  .bubble:nth-child(4) {
+    width: 250px;
+    height: 250px;
+    right: 20%;
+    bottom: 10%;
+    animation-delay: -15s;
+    background: var(--liquid-warm);
+    opacity: 0.2;
+  }
+
+  @keyframes floatUp {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    25% {
+      transform: translateY(-30px) translateX(20px) scale(1.05);
+    }
+    50% {
+      transform: translateY(-50px) translateX(-10px) scale(0.95);
+    }
+    75% {
+      transform: translateY(-20px) translateX(-30px) scale(1.02);
+    }
+  }
+
+  /* Glass Table Styles */
+  .glass-table {
+    background: var(--glass-bg-2);
+    backdrop-filter: var(--blur-amount);
+    -webkit-backdrop-filter: var(--blur-amount);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+  }
+
+  .glass-table td {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+  }
+
+  .glass-table tr:hover td {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+  }
+
+  .glass-table tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Glass Title Effect */
+  .glass-title {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.9) 0%, 
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(200, 200, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Progress Bar Glass Effect */
+  .glass-progress {
+    background: var(--glass-bg-1);
+    backdrop-filter: var(--blur-amount);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 4px;
+  }
+
+  .glass-progress-bar {
+    background: var(--liquid-primary);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+    transition: width 0.5s ease;
+  }
+
+  /* Video/Audio Glass Container */
+  .glass-media {
+    background: var(--glass-bg-1);
+    backdrop-filter: var(--blur-amount);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px var(--glass-shadow);
+  }
+
+  /* Liquid Button Effect */
+  .liquid-btn {
+    background: var(--liquid-primary);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 32px;
+    color: white;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .liquid-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .liquid-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  }
+
+  .liquid-btn:hover::before {
+    left: 100%;
+  }
+
+  /* Fade Animation with Glass */
+  .fade-in-row-glass {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    animation: fadeInGlass 0.4s ease-out forwards;
+  }
+
+  @keyframes fadeInGlass {
+    from {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Iframe Glass Border */
+  .glass-iframe {
+    border: 2px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 
+      0 8px 32px var(--glass-shadow),
+      inset 0 0 20px rgba(255, 255, 255, 0.1);
+    backdrop-filter: var(--blur-amount);
+  }
 ---
 
-<iframe src="/fireworks.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: -1;"></iframe>
+<!-- Liquid Glass Background Bubbles -->
+<div class="liquid-bubbles">
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+</div>
 
-<!-- 迷你播放器组件 -->
-<div class="mini-player" id="miniPlayer">
-  <div class="player-left">
-    <div class="player-cover">
-      <div class="cover-placeholder">🎵</div>
-    </div>
-    <div class="player-info">
-      <div class="player-title" id="playerTitle">未播放</div>
-      <div class="player-artist" id="playerArtist">等待媒体...</div>
-    </div>
+<video 
+  controls 
+  src= "/video.mp4" 
+  class="mx-auto glass-media"
+/>
+
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-media">
+  <audio controls src="FS2020.mp3" loop class="w-full"></audio>
+</div>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-card p-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-5xl font-bold mb-6">滑翔机挑战赛</h1>
+  <div class="glass-subtitle space-y-2">
+    <h3 class="text-2xl">北京师大二附中 第18届科技节</h3>
+    <div class="h-4"></div>
+    <h4 class="text-xl">高二年级</h4>
+    <h4 class="text-lg opacity-80">2025.4.10</h4>
   </div>
-  <div class="player-right">
-    <div class="player-controls">
-      <button class="control-btn" id="prevBtn" title="上一曲">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
-        </svg>
-      </button>
-      <button class="control-btn play-btn" id="playPauseBtn" title="播放/暂停">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" id="playIcon">
-          <path d="M8 5v14l11-7z"/>
-        </svg>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" id="pauseIcon" style="display: none;">
-          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-        </svg>
-      </button>
-      <button class="control-btn" id="nextBtn" title="下一曲">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
-        </svg>
-      </button>
-    </div>
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
-      <div class="progress-time">
-        <span id="currentTime">0:00</span>
-        <span id="totalTime">0:00</span>
-      </div>
-    </div>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+
+
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-card px-16 py-10">
+  <h1 class="glass-title text-4xl font-bold">参赛选手</h1>
+</div>
+
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-card px-12 py-8 mb-8">
+  <h1 class="glass-title text-4xl font-bold">参赛选手</h1>
+</div>
+
+<div class="multi-column-table">
+  <!-- 三个表格列容器 -->
+  <div class="table-column" v-for="(chunk, index) in chunkedRows" :key="index">
+    <table class="glass-table">
+      <tr v-for="(row, rowIndex) in chunk" :key="row.id" :class="'fade-in-row-glass'">
+        <td v-for="(cell, cellIndex) in row.cells" :key="cellIndex">{{ cell }}</td>
+      </tr>
+    </table>
   </div>
 </div>
 
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
 
-// ========== 配置参数 ==========
-const WS_CONFIG = {
-  host: 'localhost',
-  port: 3001,
-  reconnectInterval: 3000,  // 重连间隔（毫秒）
-}
+// 原始表格数据
+const originalRows = ref([
+  { id: 1, cells: ['高二1班', '周子珺', '蔺一铭'] },
+  { id: 2, cells: ['高二2班', '徐上', '周新洋'] },
+  { id: 3, cells: ['高二3班', '张睿达', '张迅宁'] },
+  { id: 4, cells: ['高二4班', '王曦乐', '胡婉瑄'] },
+  { id: 5, cells: ['高二5班', '武成康', '张天泽'] },
+  { id: 6, cells: ['高二6班', '王紫云', '石轩宁'] },
+  { id: 7, cells: ['高二7班', '李皓轩', '戚家绮'] },
+  { id: 8, cells: ['高二8班', '单奕超', '朱钰安'] },
+  { id: 9, cells: ['高二9班', '汪楠翔', ''] },
+  { id: 10, cells: ['高二10班', '李晓瑜', '张佳宇'] },
+  { id: 11, cells: ['高二11班', '王君赫', '贺宣壹'] },
+  { id: 12, cells: ['高二12班', '李北宜', '吴亦桐'] },
+  { id: 13, cells: ['高二13班', '徐子谦', '曹天泽'] },
+  { id: 14, cells: ['高二14班', '杨皓晨', '蔡栩安'] },
+])
 
-// ========== 播放器状态 ==========
-const playerState = {
-  isPlaying: false,
-  currentTime: 0,
-  duration: 0,
-  title: '未播放',
-  artist: '等待媒体...',
-  album: '高三6班元旦联欢',
-  volume: 1.0,
-  loopStatus: 'None',
-  shuffle: false,
-}
-
-// ========== WebSocket 连接 ==========
-let ws = null
-let reconnectTimer = null
-let isConnected = false
-
-// 连接到 WebSocket 服务器
-const connectWebSocket = () => {
-  try {
-    const wsUrl = `ws://${WS_CONFIG.host}:${WS_CONFIG.port}`
-    console.log('🔌 连接到媒体服务器:', wsUrl)
-    
-    ws = new WebSocket(wsUrl)
-    
-    ws.onopen = () => {
-      console.log('✅ WebSocket 连接成功')
-      isConnected = true
-      
-      // 清除重连定时器
-      if (reconnectTimer) {
-        clearTimeout(reconnectTimer)
-        reconnectTimer = null
-      }
-      
-      // 更新播放器状态为已连接
-      updatePlayerStatus(true)
-    }
-    
-    ws.onmessage = (event) => {
-      try {
-        const message = JSON.parse(event.data)
-        handleServerMessage(message)
-      } catch (error) {
-        console.error('❌ 解析服务器消息失败:', error.message)
-      }
-    }
-    
-    ws.onerror = (error) => {
-      console.error('❌ WebSocket 错误:', error)
-    }
-    
-    ws.onclose = () => {
-      console.log('🔌 WebSocket 连接断开')
-      isConnected = false
-      updatePlayerStatus(false)
-      
-      // 自动重连
-      reconnectTimer = setTimeout(() => {
-        console.log('🔄 尝试重新连接...')
-        connectWebSocket()
-      }, WS_CONFIG.reconnectInterval)
-    }
-    
-  } catch (error) {
-    console.error('❌ WebSocket 连接失败:', error.message)
-    updatePlayerStatus(false)
-    
-    // 自动重连
-    reconnectTimer = setTimeout(() => {
-      connectWebSocket()
-    }, WS_CONFIG.reconnectInterval)
-  }
-}
-
-// 处理服务器消息
-const handleServerMessage = (message) => {
-  console.log('📨 收到服务器消息:', message.type)
+// 这一页不需要打乱
+const shuffleArray = (array) => {
   
-  switch (message.type) {
-    case 'state':
-      // 更新播放器状态
-      updatePlayerState(message.data)
-      break
-    case 'command':
-      // 处理服务器命令
-      handleServerCommand(message.command)
-      break
-    default:
-      console.log('⚠️ 未知消息类型:', message.type)
-  }
+  return array
 }
 
-// 更新播放器状态
-const updatePlayerState = (state) => {
-  Object.assign(playerState, state)
-  
-  // 更新 UI
-  updatePlayButton()
-  updateProgress()
-  updatePlayerInfo()
-  
-  // 更新 Media Session
-  if ('mediaSession' in navigator) {
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: playerState.title,
-      artist: playerState.artist,
-      album: playerState.album,
-    })
-    navigator.mediaSession.playbackState = playerState.isPlaying ? 'playing' : 'paused'
-  }
-}
+// 创建响应式的随机排序数据
+const shuffledRows = ref([])
 
-// 处理服务器命令
-const handleServerCommand = (command) => {
-  console.log('📢 收到服务器命令:', command)
-  
-  switch (command) {
-    case 'next':
-      // 下一曲（由服务器处理）
-      break
-    case 'previous':
-      // 上一曲（由服务器处理）
-      break
-    default:
-      console.log('⚠️ 未知命令:', command)
-  }
-}
-
-// 更新播放器状态显示
-const updatePlayerStatus = (connected) => {
-  const titleEl = document.getElementById('playerTitle')
-  const artistEl = document.getElementById('playerArtist')
-
-  if (titleEl && artistEl) {
-    if (connected) {
-      titleEl.textContent = playerState.title
-      artistEl.textContent = playerState.artist
-    } else {
-      titleEl.textContent = '未连接'
-      artistEl.textContent = '等待媒体服务器...'
-    }
-  }
-}
-
-// 更新播放器信息
-const updatePlayerInfo = () => {
-  const titleEl = document.getElementById('playerTitle')
-  const artistEl = document.getElementById('playerArtist')
-  
-  if (titleEl && artistEl) {
-    titleEl.textContent = playerState.title
-    artistEl.textContent = playerState.artist
-  }
-}
-
-// 发送消息到服务器
-const sendToServer = (message) => {
-  if (ws && ws.readyState === WebSocket.OPEN) {
-    ws.send(JSON.stringify(message))
-  } else {
-    console.warn('⚠️ WebSocket 未连接，无法发送消息')
-  }
-}
-
-// ========== Media Session API 设置 ==========
-const setupMediaSession = () => {
-  if ('mediaSession' in navigator) {
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: playerState.title,
-      artist: playerState.artist,
-      album: playerState.album,
-      artwork: [
-        { src: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23667eea" width="100" height="100"/><text x="50" y="55" text-anchor="middle" font-size="40">🎵</text></svg>', sizes: '96x96', type: 'image/svg+xml' }
-      ]
-    })
-
-    navigator.mediaSession.setActionHandler('play', () => {
-      togglePlayPause()
-    })
-
-    navigator.mediaSession.setActionHandler('pause', () => {
-      togglePlayPause()
-    })
-
-    navigator.mediaSession.setActionHandler('previoustrack', () => {
-      handlePrevious()
-    })
-
-    navigator.mediaSession.setActionHandler('nexttrack', () => {
-      handleNext()
-    })
-
-    navigator.mediaSession.setActionHandler('seekto', (details) => {
-      if (details.seekTime && !isNaN(details.seekTime)) {
-        playerState.currentTime = details.seekTime
-        sendToServer({ type: 'seek', position: details.seekTime })
-        updateProgress()
-      }
-    })
-  }
-}
-
-// ========== 播放控制函数 ==========
-
-// 播放/暂停切换
-const togglePlayPause = () => {
-  playerState.isPlaying = !playerState.isPlaying
-  updatePlayButton()
-  
-  // 发送到服务器
-  sendToServer({ type: 'toggle' })
-  
-  // 更新 Media Session
-  if ('mediaSession' in navigator) {
-    navigator.mediaSession.playbackState = playerState.isPlaying ? 'playing' : 'paused'
-  }
-}
-
-// 更新播放按钮
-const updatePlayButton = () => {
-  const playIcon = document.getElementById('playIcon')
-  const pauseIcon = document.getElementById('pauseIcon')
-  if (playIcon && pauseIcon) {
-    playIcon.style.display = playerState.isPlaying ? 'none' : 'block'
-    pauseIcon.style.display = playerState.isPlaying ? 'block' : 'none'
-  }
-}
-
-// 上一曲
-const handlePrevious = () => {
-  console.log('上一曲')
-  sendToServer({ type: 'previous' })
-}
-
-// 下一曲
-const handleNext = () => {
-  console.log('下一曲')
-  sendToServer({ type: 'next' })
-}
-
-// 更新进度条
-const updateProgress = () => {
-  const progressFill = document.getElementById('progressFill')
-  const currentTimeEl = document.getElementById('currentTime')
-  const totalTimeEl = document.getElementById('totalTime')
-  
-  if (progressFill && currentTimeEl && totalTimeEl) {
-    const progress = playerState.duration > 0 ? (playerState.currentTime / playerState.duration) * 100 : 0
-    progressFill.style.width = `${progress}%`
-    currentTimeEl.textContent = formatTime(playerState.currentTime)
-    totalTimeEl.textContent = formatTime(playerState.duration)
-  }
-}
-
-// 格式化时间
-const formatTime = (seconds) => {
-  const mins = Math.floor(seconds / 60)
-  const secs = Math.floor(seconds % 60)
-  return `${mins}:${secs.toString().padStart(2, '0')}`
-}
-
-// ========== 事件监听器绑定 ==========
-const bindEventListeners = () => {
-  const playPauseBtn = document.getElementById('playPauseBtn')
-  const prevBtn = document.getElementById('prevBtn')
-  const nextBtn = document.getElementById('nextBtn')
-  const progressBar = document.getElementById('progressBar')
-  
-  if (playPauseBtn) {
-    playPauseBtn.addEventListener('click', togglePlayPause)
-  }
-  
-  if (prevBtn) {
-    prevBtn.addEventListener('click', handlePrevious)
-  }
-  
-  if (nextBtn) {
-    nextBtn.addEventListener('click', handleNext)
-  }
-  
-  if (progressBar) {
-    progressBar.addEventListener('click', (e) => {
-      const rect = progressBar.getBoundingClientRect()
-      const clickX = e.clientX - rect.left
-      const percentage = clickX / rect.width
-      const newPosition = Math.floor(percentage * playerState.duration)
-      playerState.currentTime = newPosition
-      sendToServer({ type: 'seek', position: newPosition })
-      updateProgress()
-    })
-  }
-}
-
-// ========== 生命周期钩子 ==========
-onMounted(() => {
-  console.log('🎵 迷你播放器初始化')
-  
-  setupMediaSession()
-  bindEventListeners()
-  
-  // 连接到媒体服务器
-  connectWebSocket()
-  
-  // 设置初始状态
-  updatePlayerStatus(false)
+// 分块计算属性
+const chunkedRows = computed(() => {
+  const chunkSize = Math.ceil(shuffledRows.value.length / 3)
+  return [
+    shuffledRows.value.slice(0, chunkSize),
+    shuffledRows.value.slice(chunkSize, chunkSize * 2),
+    shuffledRows.value.slice(chunkSize * 2),
+  ]
 })
 
-onUnmounted(() => {
-  console.log('👋 迷你播放器卸载')
+onMounted(() => {
+  shuffledRows.value = shuffleArray([...originalRows.value])
   
-  // 清除重连定时器
-  if (reconnectTimer) {
-    clearTimeout(reconnectTimer)
+  nextTick(() => {
+    const rows = document.querySelectorAll('.fade-in-row-glass')
+    rows.forEach((row, index) => {
+      row.style.animationDelay = `${index * 0.15}s`
+    })
+  })
+})
+</script>
+
+<style>
+.multi-column-table {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  gap: 20px; /* 列间距 */
+  height: 100%; /* 使用父容器的全部高度 */
+}
+
+.table-column {
+  flex: 1;
+  overflow-y: auto; /* 内容过多时显示滚动条 */
+  padding-right: 15px;
+}
+
+.table-column:last-child {
+  padding-right: 0;
+}
+
+.glass-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+}
+
+.glass-table td {
+  padding: 10px 16px;
+  font-size: 0.95em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 8px;
+}
+
+/* 滚动条样式 */
+.table-column::-webkit-scrollbar {
+  width: 6px;
+}
+.table-column::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+</style>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-card px-16 py-10">
+  <h1 class="glass-title text-4xl font-bold">比赛顺序</h1>
+</div>
+
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-card px-12 py-8 mb-8">
+  <h1 class="glass-title text-4xl font-bold">比赛顺序</h1>
+</div>
+
+<div class="multi-column-table">
+  <!-- 三个表格列容器 -->
+  <div class="table-column" v-for="(chunk, index) in chunkedRows" :key="index">
+    <table class="glass-table">
+      <tr v-for="(row, rowIndex) in chunk" :key="row.id" :class="'fade-in-row-glass'">
+        <td v-for="(cell, cellIndex) in row.cells" :key="cellIndex">{{ cell }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script setup>
+import { ref, computed, onMounted, nextTick } from 'vue'
+
+// 原始表格数据
+const originalRows = ref([
+  { id: 1, cells: ['高二1班', '周子珺', '蔺一铭'] },
+  { id: 2, cells: ['高二2班', '徐上', '周新洋'] },
+  { id: 3, cells: ['高二3班', '张睿达', '张迅宁'] },
+  { id: 4, cells: ['高二4班', '王曦乐', '胡婉瑄'] },
+  { id: 5, cells: ['高二5班', '武成康', '张天泽'] },
+  { id: 6, cells: ['高二6班', '王紫云', '石轩宁'] },
+  { id: 7, cells: ['高二7班', '李皓轩', '戚家绮'] },
+  { id: 8, cells: ['高二8班', '单奕超', '朱钰安'] },
+  { id: 9, cells: ['高二9班', '汪楠翔', ''] },
+  { id: 10, cells: ['高二10班', '李晓瑜', '张佳宇'] },
+  { id: 11, cells: ['高二11班', '王君赫', '贺宣壹'] },
+  { id: 12, cells: ['高二12班', '李北宜', '吴亦桐'] },
+  { id: 13, cells: ['高二13班', '徐子谦', '曹天泽'] },
+  { id: 14, cells: ['高二14班', '杨皓晨', '蔡栩安'] },
+])
+
+// Fisher-Yates 洗牌算法
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
   }
-  
-  // 关闭 WebSocket 连接
-  if (ws) {
-    ws.close()
+  return array
+}
+
+// 创建响应式的随机排序数据
+const shuffledRows = ref([])
+
+// 分块计算属性
+const chunkedRows = computed(() => {
+  const chunkSize = Math.ceil(shuffledRows.value.length / 3)
+  return [
+    shuffledRows.value.slice(0, chunkSize),
+    shuffledRows.value.slice(chunkSize, chunkSize * 2),
+    shuffledRows.value.slice(chunkSize * 2),
+  ]
+})
+
+onMounted(() => {
+  shuffledRows.value = shuffleArray([...originalRows.value])
+  localStorage.setItem('shuffledRows', JSON.stringify(shuffledRows.value))
+  nextTick(() => {
+    const rows = document.querySelectorAll('.fade-in-row-glass')
+    rows.forEach((row, index) => {
+      row.style.animationDelay = `${index * 0.15}s`
+    })
+  })
+})
+</script>
+
+<style>
+.multi-column-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.table-column {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+.table-column:last-child {
+  padding-right: 0;
+}
+
+.glass-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+}
+
+.glass-table td {
+  padding: 10px 16px;
+  font-size: 0.95em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 8px;
+}
+
+.table-column::-webkit-scrollbar {
+  width: 6px;
+}
+.table-column::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+</style>
+
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 7%;"></div>
+</div>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title = ref('')
+const subtitle = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 0) {
+    const firstRow = storedRows[0]?.cells || []
+    const secondRow = storedRows[1]?.cells || []
+    title.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
 })
 </script>
 
-<style scoped>
-/* 迷你播放器样式 */
-.mini-player {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 350px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  padding: 12px;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  z-index: 1000;
-  font-family: 'Microsoft YaHei', sans-serif;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle }}</h3>
+</div>
 
-.mini-player:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
 
-/* 左侧区域：封面和信息 */
-.player-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
+---
+layout: center
+class: slide-container
+---
 
-.player-cover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  flex-shrink: 0;
-}
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 14%;"></div>
+</div>
 
-.cover-placeholder {
-  font-size: 24px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
+<script setup>
+import { ref, onMounted } from 'vue'
 
-.player-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-}
+const title1 = ref('')
+const subtitle1 = ref('')
 
-.player-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.player-artist {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.7);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* 右侧区域：控件和进度条 */
-.player-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 0;
-}
-
-.player-controls {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 10px;
-}
-
-.control-btn {
-  width: 32px;
-  height: 32px;
-  border: none;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 50%;
-  color: rgba(255, 255, 255, 0.9);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  flex-shrink: 0;
-}
-
-.control-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.control-btn:active {
-  transform: scale(0.95);
-}
-
-.play-btn {
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.4), rgba(118, 75, 162, 0.4));
-}
-
-.play-btn:hover {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.6), rgba(118, 75, 162, 0.6));
-}
-
-.progress-container {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-  transition: height 0.2s ease;
-}
-
-.progress-bar:hover {
-  height: 6px;
-}
-
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  border-radius: 2px;
-  width: 0%;
-  transition: width 0.1s linear;
-  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
-}
-
-.progress-time {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 500;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .mini-player {
-    width: 280px;
-    left: 10px;
-    top: 10px;
-    padding: 10px;
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 1) {
+    const firstRow = storedRows[1]?.cells || []
+    const secondRow = storedRows[2]?.cells || []
+    title1.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle1.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
   }
-  
-  .player-cover {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .cover-placeholder {
-    font-size: 20px;
-  }
-  
-  .player-title {
-    font-size: 12px;
-  }
-  
-  .player-artist {
-    font-size: 10px;
-  }
-  
-  .control-btn {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .play-btn {
-    width: 32px;
-    height: 32px;
-  }
-}
-</style>
+})
+</script>
 
-# 高三 6 班元旦联欢 {.inline-block.view-transition-title}
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title1 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle1 }}</h3>
+</div>
 
-## 2025-12-31
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
 
-<PoweredBySlidev></PoweredBySlidev>
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 21%;"></div>
+</div>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title2 = ref('')
+const subtitle2 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 2) {
+    const firstRow = storedRows[2]?.cells || []
+    const secondRow = storedRows[3]?.cells || []
+    title2.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle2.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title2 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle2 }}</h3>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 29%;"></div>
+</div>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title3 = ref('')
+const subtitle3 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 3) {
+    const firstRow = storedRows[3]?.cells || []
+    const secondRow = storedRows[4]?.cells || []
+    title3.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle3.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title3 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle3 }}</h3>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 36%;"></div>
+</div>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title4 = ref('')
+const subtitle4 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 4) {
+    const firstRow = storedRows[4]?.cells || []
+    const secondRow = storedRows[5]?.cells || []
+    title4.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle4.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title4 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle4 }}</h3>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 43%;"></div>
+</div>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title5 = ref('')
+const subtitle5 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 5) {
+    const firstRow = storedRows[5]?.cells || []
+    const secondRow = storedRows[6]?.cells || []
+    title5.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle5.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title5 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle5 }}</h3>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 50%;"></div>
+</div>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title6 = ref('')
+const subtitle6 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 6) {
+    const firstRow = storedRows[6]?.cells || []
+    const secondRow = storedRows[7]?.cells || []
+    title6.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle6.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title6 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle6 }}</h3>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 57%;"></div>
+</div>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title7 = ref('')
+const subtitle7 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 7) {
+    const firstRow = storedRows[7]?.cells || []
+    const secondRow = storedRows[8]?.cells || []
+    title7.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle7.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title7 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle7 }}</h3>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 64%;"></div>
+</div>
+
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title8 = ref('')
+const subtitle8 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 8) {
+    const firstRow = storedRows[8]?.cells || []
+    const secondRow = storedRows[9]?.cells || []
+    title8.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle8.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title8 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle8 }}</h3>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 71%;"></div>
+</div>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title9 = ref('')
+const subtitle9 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 9) {
+    const firstRow = storedRows[9]?.cells || []
+    const secondRow = storedRows[10]?.cells || []
+    title9.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle9.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title9 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle9 }}</h3>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 79%;"></div>
+</div>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title10 = ref('')
+const subtitle10 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 10) {
+    const firstRow = storedRows[10]?.cells || []
+    const secondRow = storedRows[11]?.cells || []
+    title10.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle10.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title10 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle10 }}</h3>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 86%;"></div>
+</div>
+
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title11 = ref('')
+const subtitle11 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 11) {
+    const firstRow = storedRows[11]?.cells || []
+    const secondRow = storedRows[12]?.cells || []
+    title11.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle11.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title11 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle11 }}</h3>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 93%;"></div>
+</div>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title12 = ref('')
+const subtitle12 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 12) {
+    const firstRow = storedRows[12]?.cells || []
+    const secondRow = storedRows[13]?.cells || []
+    title12.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle12.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title12 }}</h1>
+  <div class="h-8"></div>
+  <h3 class="glass-subtitle text-xl">Next: {{ subtitle12 }}</h3>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
+---
+layout: center
+class: slide-container
+---
+
+<div class="glass-progress w-64 mx-auto mb-8">
+  <div class="glass-progress-bar h-4" style="width: 100%;"></div>
+</div>
+
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title13 = ref('')
+const subtitle13 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 13) {
+    const firstRow = storedRows[13]?.cells || []
+    const secondRow = storedRows[14]?.cells || []
+    title13.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle13.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+<div class="glass-card px-16 py-12 max-w-4xl mx-auto">
+  <h1 class="glass-title text-4xl font-bold mb-4">{{ title13 }}</h1>
+</div>
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
+
 
 ---
 layout: cover
+class: slide-container
 ---
 
-<iframe src="/fireworks.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: -1;"></iframe>
-
-# 包饺子 {.inline-block.view-transition-title}
-
----
-layout: cover
-class: 'fireworks-background'
----
-
-<iframe src="/fireworks.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: -1;"></iframe>
-
-# 生日会 {.inline-block.view-transition-title}
----
-layout: cover
-class: 'fireworks-background'
----
-
-<iframe src="/fireworks.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: -1;"></iframe>
-
-# 生日会 {.inline-block.view-transition-title}
-
-## 2025 年 12 月至 2026 年 1 月过生日的同学：
-### 
-#### 陈智宁、蒋道颐、王紫云、赵星寓、焦禹涵、赵梓彤、高海洋
-
-
----
----
-
-<iframe src="/fireworks.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: -1;"></iframe>
-
-
----
-layout: cover
-background: https://4kwallpapers.com/images/wallpapers/vector-art-colorful-3840x2160-12144.jpg
----
-
-
-# 歌曲飞花令 {.inline-block.view-transition-title}
-
----
-layout: cover
-background: https://4kwallpapers.com/images/wallpapers/vector-art-colorful-3840x2160-12144.jpg
----
-
-# 你画我猜 {.inline-block.view-transition-title}
-
-## Pictionary Game
-
----
-
-
-# 第 1 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    1
-  </div>
+<div class="glass-card px-16 py-12 max-w-3xl mx-auto">
+  <h1 class="glass-title text-5xl font-bold mb-6">滑翔机挑战赛</h1>
+  <h2 class="glass-subtitle text-2xl mb-4">2025.4.10</h2>
+  <h3 class="glass-subtitle text-xl opacity-80">高二年级</h3>
 </div>
 
----
-
-
-# 第 1 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    魔方
-  </div>
-</div>
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute glass-iframe"
+></iframe>
 
 ---
-
-# 第 2 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    2
-  </div>
-</div>
-
----
-
-# 第 2 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    蒸汽机
-  </div>
-</div>
-
----
-
-# 第 3 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    3
-  </div>
-</div>
-
----
-
-# 第 3 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    指南针
-  </div>
-</div>
-
----
-
-# 第 4 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    4
-  </div>
-</div>
-
----
-
-# 第 4 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    蜂巢
-  </div>
-</div>
-
----
-
-# 第 5 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    5
-  </div>
-</div>
-
----
-
-# 第 5 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    热气球
-  </div>
-</div>
-
----
-
-# 第 6 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    6
-  </div>
-</div>
-
----
-
-# 第 6 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    手风琴
-  </div>
-</div>
-
----
-
-# 第 7 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    7
-  </div>
-</div>
-
----
-
-# 第 7 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    海浪
-  </div>
-</div>
-
----
-
-# 第 8 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    8
-  </div>
-</div>
-
----
-
-# 第 8 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    望远镜
-  </div>
-</div>
-
----
-
-# 第 9 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    9
-  </div>
-</div>
-
----
-
-# 第 9 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    船锚
-  </div>
-</div>
-
----
-
-# 第 10 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    10
-  </div>
-</div>
-
----
-
-# 第 10 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    月蚀
-  </div>
-</div>
-
----
-
-# 第 11 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    11
-  </div>
-</div>
-
----
-
-# 第 11 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    沙漏
-  </div>
-</div>
-
----
-
-# 第 12 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    12
-  </div>
-</div>
-
----
-
-# 第 12 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    钥匙孔
-  </div>
-</div>
-
----
-
-# 第 13 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    13
-  </div>
-</div>
-
----
-
-# 第 13 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    立交桥
-  </div>
-</div>
-
----
-
-# 第 14 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    14
-  </div>
-</div>
-
----
-
-# 第 14 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    纸飞机
-  </div>
-</div>
-
----
-
-# 第 15 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    15
-  </div>
-</div>
-
----
-
-# 第 15 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    温室
-  </div>
-</div>
-
----
-
-# 第 16 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    16
-  </div>
-</div>
-
----
-
-# 第 16 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    盾牌
-  </div>
-</div>
-
----
-
-# 第 17 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    17
-  </div>
-</div>
-
----
-
-# 第 17 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    章鱼
-  </div>
-</div>
-
----
-
-# 第 18 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    18
-  </div>
-</div>
-
----
-
-# 第 18 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    磁悬浮列车
-  </div>
-</div>
-
----
-
-# 第 19 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    19
-  </div>
-</div>
-
----
-
-# 第 19 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    马戏团
-  </div>
-</div>
-
----
-
-# 第 20 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    20
-  </div>
-</div>
-
----
-
-# 第 20 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    灯塔
-  </div>
-</div>
-
----
-
-# 第 21 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    21
-  </div>
-</div>
-
----
-
-# 第 21 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    钻石
-  </div>
-</div>
-
----
-
-# 第 22 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    22
-  </div>
-</div>
-
----
-
-# 第 22 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    鼠标
-  </div>
-</div>
-
----
-
-# 第 23 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    23
-  </div>
-</div>
-
----
-
-# 第 23 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    萤火虫
-  </div>
-</div>
-
----
-
-# 第 24 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    24
-  </div>
-</div>
-
----
-
-# 第 24 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    蜘蛛网
-  </div>
-</div>
-
----
-
-# 第 25 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    25
-  </div>
-</div>
-
----
-
-# 第 25 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    口琴
-  </div>
-</div>
-
----
-
-# 第 26 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    26
-  </div>
-</div>
-
----
-
-# 第 26 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    冰山
-  </div>
-</div>
-
----
-
-# 第 27 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    27
-  </div>
-</div>
-
----
-
-# 第 27 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    迷宫
-  </div>
-</div>
-
----
-
-# 第 28 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    28
-  </div>
-</div>
-
----
-
-# 第 28 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    打印机
-  </div>
-</div>
-
----
-
-# 第 29 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    29
-  </div>
-</div>
-
----
-
-# 第 29 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    皮影戏
-  </div>
-</div>
-
----
-
-# 第 30 页
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    30
-  </div>
-</div>
-
----
-
-# 第 30 题
-
-<div class="flex items-center justify-center h-full">
-  <div class="text-8xl font-bold">
-    极光
-  </div>
-</div>
-
----
-layout: cover
----
-
-# 游戏结束 🎉 {.inline-block.view-transition-title}
-
-
