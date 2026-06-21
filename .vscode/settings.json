@@ -4,7 +4,8 @@
         "**/slides.md",
         "EF.md",
         "2.md",
-        "1.md"
+        "1.md",
+        "0621.md"
     ],
     "slidev.port": 3030
 }
