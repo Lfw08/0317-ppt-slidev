@@ -340,6 +340,33 @@ transition: view-transition-slide
   如果读书少，我们能干点什么？
 </div>
 
+## 一、一轮复习节奏
+
+### 
+
+## 二、能抓住的分数
+###
+
+## 三、关于背诵默写
+
+---
+transition: view-transition
+layout: cover
+---
+
+# 一轮复习节奏
+## 
+### 
+
+## 01.文言文
+### 
+## 02.古诗
+### 
+## 03.非连
+###
+## 04.现代文
+
+
 ---
 transition: view-transition
 ---
@@ -382,6 +409,8 @@ transition: view-transition
 
 </div>
 
+
+
 ---
 transition: view-transition
 ---
@@ -420,20 +449,36 @@ transition: view-transition
   注：二轮复习主要就是做题讲题补漏洞
 </div>
 
+
 ---
 transition: view-transition
 ---
 
-# 语文 · 能抓住的分数 · 默写 & 名著
+![](/images/pdf_page_04.png)
+
+<div class="text-center text-xs opacity-50 mt-2">原版：笔记示例</div>
+---
+transition: view-transition
+---
+
+# 语文 · 能抓住的分数
 
 <div v-grid="cols-2" class="mt-4 gap-6">
 
 <div class="p-4 rounded" style="background: #e8f4fd66; border: 2px solid #c7e9fb;">
 
+### 🔤 文言文实虚词
+- 活用**五三**
+- **背 + 实际应用**
+
+</div>
+
+<div class="p-4 rounded" style="background: #e8f4fd66; border: 2px solid #c7e9fb;">
+
 ### ✍️ 默写
-- 按**五三**落实全部背诵
-- 抓住**校本教材**
-- 形成**个性化易错字积累**
+- 按照五三**落实全部背诵**
+- 抓住校本教材
+- 形成个性化易错字积累
 
 </div>
 
@@ -447,21 +492,9 @@ transition: view-transition
 
 </div>
 
----
-transition: view-transition
----
-
-# 语文 · 能抓住的分数 · 文言 & 语基
-
 <div v-grid="cols-2" class="mt-4 gap-6">
 
-<div class="p-4 rounded" style="background: #e8f4fd66; border: 2px solid #c7e9fb;">
 
-### 🔤 文言文实虚词
-- 活用**五三**
-- **背 + 实际应用**
-
-</div>
 
 <div class="p-4 rounded" style="background: #e8f4fd66; border: 2px solid #c7e9fb;">
 
@@ -476,6 +509,7 @@ transition: view-transition
 <div class="mt-8 text-center text-3xl font-bold" style="color: #ff657a;">
   总结：抓五三！
 </div>
+
 
 ---
 transition: view-transition
@@ -506,68 +540,15 @@ transition: view-transition
 
 </div>
 
----
-transition: view-transition
----
 
-# 语文 · 大题得分 · 非连 & 文言文
-
-<div v-grid="cols-2" class="mt-4 gap-6">
-
-<div class="p-4 rounded" style="background: #e8f4fd66; border: 2px dashed #1E1E1E;">
-
-### 📑 非连续性文本
-- **选择题**：根据题干找答案，仔细比对原文，避免过度解读
-- **简答题**：筛选信息、多角度归纳、合并同类项
-
-</div>
-
-<div class="p-4 rounded" style="background: #e8f4fd66; border: 2px dashed #1E1E1E;">
-
-### 📜 文言文
-- 重点词义积累（发、伏、优、造、济、池、干……）
-- 简答题：概括关系/区别
-  - 同 → 好处/坏处
-  - 异 → 国家/个人
-
-</div>
-
-</div>
 
 ---
 transition: view-transition
 ---
 
-# 语文 · 大题得分 · 现代文 & 古诗
+![](/images/pdf_page_06.png)
 
-<div v-grid="cols-2" class="mt-4 gap-6">
-
-<div class="p-4 rounded" style="background: #c7e9fb66; border: 2px dashed #1E1E1E;">
-
-### 📖 现代文 & 古诗文·赏析
-
-**现代文维度：**
-- 内容 · 结构 · 情感 · 形式
-
-**古诗文：** 上述 + 语境 + 表现手法
-
-</div>
-
-<div class="p-4 rounded" style="background: #ffd76d66; border: 2px dashed #1E1E1E;">
-
-### 🎭 诗歌专题
-
-**情感分析：**
-- 分析情感异同
-- 把握情感脉络
-
-**内涵/意象分析：**
-- 翻译 → 表层含义 → 深层含义
-
-</div>
-
-</div>
-
+<div class="text-center text-xs opacity-50 mt-2">原版：大题最大化得分</div>
 ---
 transition: view-transition-slide
 ---
@@ -577,6 +558,7 @@ transition: view-transition-slide
 <div class="text-2xl opacity-60 mt-2 tracking-widest">
   复习节奏 · 自主总结
 </div>
+
 
 ---
 transition: view-transition
@@ -654,85 +636,22 @@ transition: view-transition
 
 </div>
 
----
-transition: view-transition
----
-
-# 政治 · 自主总结 · 笔记原则
-
-<div class="p-4 rounded" style="background: #c7e9fb66; border: 2px dashed #1E1E1E;">
-
-### 📝 笔记原则
-- **分板块**
-- **短句**有重点 + 好记忆
-- 易错点 + 新语词积累
-- 做题积累 + 课堂随手记 + 老师PPT/学案
-
-</div>
-
-<div class="mt-6" v-grid="cols-3" style="gap: 12px;">
-
-<div class="p-3 rounded text-center" style="background: #fdff3266;">
-💼 经济
-</div>
-
-<div class="p-3 rounded text-center" style="background: #a8e6cf66;">
-⚖️ 法律
-</div>
-
-<div class="p-3 rounded text-center" style="background: #ffd76d66;">
-🧠 逻辑思维
-</div>
-
-</div>
 
 ---
 transition: view-transition
 ---
 
-# 政治 · 自主总结 · 错题分析
+![](/images/pdf_page_10.png)
 
-<div class="mt-4 text-2xl text-center font-bold" style="color: #00ff04;">
-  错题分析三步法
-</div>
+<div class="text-center text-xs opacity-50 mt-2">原版：经济与法律笔记</div>
 
-<div class="mt-6" v-grid="cols-3" style="gap: 12px;">
+---
+transition: view-transition
+---
 
-<div class="p-4 rounded text-center" style="background: #fdff3266; border: 2px dashed #1E1E1E;">
+![](/images/pdf_page_11.png)
 
-**1️⃣ 看答案**
-<br>
-答案的答题框架是什么？
-
-</div>
-
-<div class="p-4 rounded text-center" style="background: #c7e9fb66; border: 2px dashed #1E1E1E;">
-
-**2️⃣ 找差距**
-<br>
-自己答了但没分？
-→ 为什么想偏了？
-（审题 / 知识理解）
-
-</div>
-
-<div class="p-4 rounded text-center" style="background: #a8e6cf66; border: 2px dashed #1E1E1E;">
-
-**3️⃣ 补漏洞**
-<br>
-答案里有自己没答出来的？
-→ 知识/思维漏洞及时补
-
-</div>
-
-</div>
-
-<div class="mt-6 p-3 rounded" style="background: #ff657a33; border-left: 4px solid #ff657a;">
-
-**知识点模块总结：** 挑自己答题生疏的、没话说的板块，看教材/五三做专题语词梳理
-
-</div>
-
+<div class="text-center text-xs opacity-50 mt-2">原版：错题整理与思维总结</div>
 ---
 transition: view-transition-slide
 ---
@@ -785,11 +704,12 @@ transition: view-transition
 
 </div>
 
+
 ---
 transition: view-transition
 ---
 
-# 化学 · 自主总结 · 一轮扫盲
+# 化学 · 自主总结 
 
 <div v-grid="cols-2" class="mt-4 gap-6">
 
@@ -813,6 +733,7 @@ transition: view-transition
 - 原因解释类
 - 实验设计类
 - 计算类
+- ……
 
 **原因解释类细分：**
 - **结构**：位-构-性
@@ -829,81 +750,23 @@ transition: view-transition
 
 </div>
 
----
-transition: view-transition
----
 
-# 化学 · 易错知识点（无机）
-
-<div class="mt-2 text-lg font-bold opacity-70">
-  知识点：易错+盲点 · 小专题
-</div>
-
-<div v-grid="cols-2" class="mt-4 gap-3">
-
-<div class="p-3 rounded text-sm" style="background: #e8f4fd66;">
-
-1️⃣ 漂白粉：CaCl₂ 与 Ca(ClO)₂ 的混合物
-<br>
-2️⃣ 王水：浓 HNO₃ : 浓 HCl = 1 : 3
-<br>
-3️⃣ 只有胶体有吸附性
-<br>
-4️⃣ 蒸干 FeCl₃ 得 Fe₂O₃（HCl 挥发）；蒸干 Fe₂(SO₄)₃ 得 Fe₂(SO₄)₃（H₂SO₄ 不挥发）
-<br>
-5️⃣ 沙子、水晶、玛瑙、玻璃、光纤 → 主要成分均为 SiO₂
-
-</div>
-
-<div class="p-3 rounded text-sm" style="background: #e8f4fd66;">
-
-6️⃣ 胆矾、明矾 → 可净水不能消毒
-<br>
-7️⃣ 水玻璃 = Na₂SiO₃ 水溶液
-<br>
-8️⃣ 氯仿 = CHCl₃
-<br>
-9️⃣ 天然有机高分子：淀粉、纤维素、蛋白质
-<br>
-🔟 金属冶炼：K-Ca-Mg-Al 电解法，Zn-Cu 热还原法，Hg-Ag 热分解法
-
-</div>
-
-</div>
 
 ---
 transition: view-transition
 ---
 
-# 化学 · 计算与选题策略
+![](/images/pdf_page_14.png)
 
-<div v-grid="cols-2" class="mt-4 gap-6">
+<div class="text-center text-xs opacity-50 mt-2">原版：无机易错笔记本</div>
 
-<div class="p-3 rounded" style="background: #c7e9fb66; border: 2px dashed #1E1E1E;">
+---
+transition: view-transition
+---
 
-### 🔢 常用计算公式
-- 产率 = M实际 / M理论 × 100%
-- 转化率 α = n转化 / n起始 × 100%
-- 选择性 = …
-- 体积分数 = nₘ / n总
+![](/images/pdf_page_15.png)
 
-**典型：** 三段式法（起始→转化→平衡）
-
-</div>
-
-<div class="p-3 rounded" style="background: #ffd76d66; border: 2px dashed #1E1E1E;">
-
-### 💡 选题策略
-
-- 把多道相似题放在一起，更容易找出**本质规律**
-- 怕后期复习看不懂 → 有意识写示例
-- **越到后期：抓住选择 + 结构 + 有机**
-- 难题不是决定性因素——**该拿的分拿到**就已足够
-
-</div>
-
-</div>
-
+<div class="text-center text-xs opacity-50 mt-2">原版：计算与选题笔记</div>
 ---
 transition: view-transition-slide
 ---
@@ -1169,7 +1032,7 @@ transition: view-transition
 
 # 数学 · 知识复习
 
-<div class="mt-4 p-4 rounded" style="background: #fdff3266; border-left: 6px solid #fdff32;">
+<div class="mt-4 p-4 rounded" style="background: #fdff3266; border-left: 6px solid #1d05f4;">
 
 ### 📚 一轮复习：紧跟学校进度，及时解决遗留问题
 理解重点概念公式，关注做题过程中的**细节**要求（如 k ∈ Z，求期望列出公式数字）
@@ -1206,7 +1069,7 @@ transition: view-transition
 
 # 数学 · 考试策略 · 选填题
 
-<div class="mt-4 text-center text-2xl font-bold" style="color: #fdff32;">
+<div class="mt-4 text-center text-2xl font-bold" style="color: #1d05f4;">
   ⏱ 选填总计不超过 40 分钟
 </div>
 
@@ -1289,6 +1152,7 @@ transition: view-transition
 
 </div>
 
+
 ---
 transition: view-transition-slide
 ---
@@ -1305,7 +1169,7 @@ transition: view-transition
 
 # 历史 · 知识为王
 
-<div class="mt-4 text-3xl text-center font-bold" style="color: #fdff32;">
+<div class="mt-4 text-3xl text-center font-bold" style="color: #1d05f4;">
   知识为王
 </div>
 
@@ -1345,7 +1209,7 @@ transition: view-transition
 
 # 历史 · 做题策略 · 选择题
 
-<div class="mt-4 p-6 rounded text-center" style="background: #fdff3266; border: 3px solid #fdff32;">
+<div class="mt-4 p-6 rounded text-center" style="background: #fdff3266; border: 3px solid #1d05f4;">
 
 ### ✅ 选择题
 
@@ -1399,7 +1263,7 @@ transition: view-transition
 
 # 地理 · 知识体系
 
-<div class="mt-4 text-2xl text-center font-bold" style="color: #fdff32;">
+<div class="mt-4 text-2xl text-center font-bold" style="color: #1d05f4;">
   核心概念、核心知识间的逻辑
 </div>
 
@@ -1429,7 +1293,7 @@ transition: view-transition
 
 <div v-grid="cols-2" class="mt-4 gap-6">
 
-<div class="p-4 rounded" style="background: #fdff3266; border: 2px solid #fdff32;">
+<div class="p-4 rounded" style="background: #fdff3266; border: 2px solid #1d05f4;">
 
 ### 🏔️ 自然地理
 以**知识**为主
@@ -1482,8 +1346,12 @@ transition: view-transition
 </div>
 
 
+
 ---
 transition: view-transition-slide
+layout: center
+---
+
 # 结语
 
 <div class="text-3xl text-center tracking-widest">
