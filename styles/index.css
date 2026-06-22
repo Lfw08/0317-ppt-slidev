@@ -1,20 +1,20 @@
 /* Global style overrides for excali-slide theme */
 .slidev-layout {
-  font-size: 0.72rem !important;
+  font-size: 0.85rem !important;
 }
 .slidev-layout h1 {
-  font-size: 1.6rem !important;
+  font-size: 1.8rem !important;
 }
 .slidev-layout h2 {
-  font-size: 1.05rem !important;
+  font-size: 1.2rem !important;
 }
 .slidev-layout h3 {
-  font-size: 0.88rem !important;
+  font-size: 1.0rem !important;
 }
 .slidev-layout p,
 .slidev-layout li {
-  font-size: 0.72rem !important;
-  line-height: 1.4 !important;
+  font-size: 0.85rem !important;
+  line-height: 1.25 !important;
 }
 .slidev-layout .rounded {
   padding: 0.15rem 0.25rem !important;
@@ -50,19 +50,19 @@
   gap: 0.2rem !important;
 }
 .slidev-layout .text-3xl {
-  font-size: 1.2rem !important;
+  font-size: 1.4rem !important;
 }
 .slidev-layout .text-2xl {
-  font-size: 1.05rem !important;
+  font-size: 1.2rem !important;
 }
 .slidev-layout .text-lg {
-  font-size: 0.78rem !important;
+  font-size: 0.92rem !important;
 }
 .slidev-layout .text-sm {
-  font-size: 0.65rem !important;
+  font-size: 0.76rem !important;
 }
 .slidev-layout .text-xs {
-  font-size: 0.55rem !important;
+  font-size: 0.65rem !important;
 }
 .slidev-layout .tracking-wider {
   letter-spacing: 0.04em !important;

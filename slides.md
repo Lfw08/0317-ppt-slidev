@@ -6,7 +6,7 @@ themeConfig:
   primary-highlight: '#fdff32'
   secondary-highlight: '#00ff04'
   marker-animation: enabled
-transition: view-transition-slide
+transition: view-transition
 monaco: true
 lineNumbers: false
 ---
@@ -25,7 +25,6 @@ lineNumbers: false
 
 ---
 layout: intro
-transition: view-transition-slide
 ---
 
 # 第一部分 · 六个问题
@@ -35,7 +34,6 @@ transition: view-transition-slide
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 问题一：专业选择没想法，怎么办？
@@ -63,7 +61,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 问题二：如何最大化利用一轮复习？
@@ -85,7 +82,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 问题三：如何规划时间？
@@ -107,7 +103,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 问题三：避免疲劳作战
@@ -149,7 +144,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 问题四：暑假和寒假怎么利用？
@@ -177,7 +171,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 问题五：缓解压力与焦虑 · 学业压力
@@ -213,7 +206,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 问题五：缓解压力与焦虑 · 人际压力
@@ -249,7 +241,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 问题五：警惕"虚假休息"
@@ -289,7 +280,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 问题六：成绩"过山车"与自我怀疑
@@ -318,7 +308,6 @@ transition: view-transition
 
 ---
 layout: intro
-transition: view-transition-slide
 ---
 
 # 第二部分 · 各学科经验
@@ -328,9 +317,8 @@ transition: view-transition-slide
 </div>
 
 ---
-transition: view-transition-slide
+layout: center
 ---
-
 # 壹 · 语文
 
 <div class="text-2xl opacity-60 mt-2 tracking-widest">
@@ -350,7 +338,6 @@ transition: view-transition-slide
 ## 三、关于背诵默写
 
 ---
-transition: view-transition
 layout: cover
 ---
 
@@ -368,7 +355,6 @@ layout: cover
 
 
 ---
-transition: view-transition
 ---
 
 # 语文 · 一轮复习节奏 · 文言文 & 古诗
@@ -412,7 +398,6 @@ transition: view-transition
 
 
 ---
-transition: view-transition
 ---
 
 # 语文 · 一轮复习节奏 · 非连 & 现代文
@@ -451,14 +436,12 @@ transition: view-transition
 
 
 ---
-transition: view-transition
 ---
 
 ![](/images/pdf_page_04.png)
 
 <div class="text-center text-xs opacity-50 mt-2">原版：笔记示例</div>
 ---
-transition: view-transition
 ---
 
 # 语文 · 能抓住的分数
@@ -512,7 +495,6 @@ transition: view-transition
 
 
 ---
-transition: view-transition
 ---
 
 # 语文 · 关于背诵默写
@@ -543,14 +525,13 @@ transition: view-transition
 
 
 ---
-transition: view-transition
 ---
 
 ![](/images/pdf_page_06.png)
 
 <div class="text-center text-xs opacity-50 mt-2">原版：大题最大化得分</div>
 ---
-transition: view-transition-slide
+layout: center
 ---
 
 # 贰 · 政治
@@ -561,7 +542,6 @@ transition: view-transition-slide
 
 
 ---
-transition: view-transition
 ---
 
 # 政治 · 复习节奏
@@ -589,7 +569,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 政治 · 选择题
@@ -613,7 +592,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 政治 · 大题
@@ -638,7 +616,6 @@ transition: view-transition
 
 
 ---
-transition: view-transition
 ---
 
 ![](/images/pdf_page_10.png)
@@ -646,14 +623,13 @@ transition: view-transition
 <div class="text-center text-xs opacity-50 mt-2">原版：经济与法律笔记</div>
 
 ---
-transition: view-transition
 ---
 
 ![](/images/pdf_page_11.png)
 
 <div class="text-center text-xs opacity-50 mt-2">原版：错题整理与思维总结</div>
 ---
-transition: view-transition-slide
+layout: center
 ---
 
 # 叁 · 化学
@@ -663,7 +639,6 @@ transition: view-transition-slide
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 化学 · 课堂听讲
@@ -706,12 +681,11 @@ transition: view-transition
 
 
 ---
-transition: view-transition
 ---
 
 # 化学 · 自主总结 
 
-<div v-grid="cols-2" class="mt-4 gap-6">
+<div v-grid="cols-2" class="mt-4 gap-6" style="line-height: 1.25;">
 
 <div class="p-4 rounded" style="background: #a8e6cf66; border: 2px dashed #1E1E1E;">
 
@@ -753,7 +727,6 @@ transition: view-transition
 
 
 ---
-transition: view-transition
 ---
 
 ![](/images/pdf_page_14.png)
@@ -761,14 +734,13 @@ transition: view-transition
 <div class="text-center text-xs opacity-50 mt-2">原版：无机易错笔记本</div>
 
 ---
-transition: view-transition
 ---
 
 ![](/images/pdf_page_15.png)
 
 <div class="text-center text-xs opacity-50 mt-2">原版：计算与选题笔记</div>
 ---
-transition: view-transition-slide
+layout: center
 ---
 
 # 肆 · 物理
@@ -778,7 +750,6 @@ transition: view-transition-slide
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 物理 · 一轮复习：构建模型体系
@@ -814,7 +785,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 物理 · 实验题
@@ -849,7 +819,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 物理 · 计算题策略
@@ -885,7 +854,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 物理 · 选择题
@@ -907,7 +875,7 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition-slide
+layout: center
 ---
 
 # 伍 · 生物
@@ -917,7 +885,6 @@ transition: view-transition-slide
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 生物 · 回归课本
@@ -951,7 +918,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 生物 · 长题干
@@ -981,7 +947,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 生物 · 选择题
@@ -1015,9 +980,6 @@ transition: view-transition
 
 ---
 layout: center
-transition: view-transition-slide
----
-
 ---
 
 # 陆 · 数学
@@ -1027,7 +989,6 @@ transition: view-transition-slide
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 数学 · 知识复习
@@ -1047,7 +1008,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 数学 · 考试心态
@@ -1064,7 +1024,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 数学 · 考试策略 · 选填题
@@ -1096,7 +1055,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 数学 · 考试策略 · 解答题 & 底线
@@ -1122,7 +1080,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 数学 · 解析几何与导数
@@ -1154,7 +1111,7 @@ transition: view-transition
 
 
 ---
-transition: view-transition-slide
+layout: center
 ---
 
 # 柒 · 历史
@@ -1164,7 +1121,6 @@ transition: view-transition-slide
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 历史 · 知识为王
@@ -1204,7 +1160,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 历史 · 做题策略 · 选择题
@@ -1222,7 +1177,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 历史 · 做题策略 · 简答题
@@ -1248,7 +1202,7 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition-slide
+layout: center
 ---
 
 # 捌 · 地理
@@ -1258,7 +1212,6 @@ transition: view-transition-slide
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 地理 · 知识体系
@@ -1286,7 +1239,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 地理 · 自然与人文
@@ -1323,7 +1275,6 @@ transition: view-transition
 </div>
 
 ---
-transition: view-transition
 ---
 
 # 地理 · 答题核心
@@ -1348,7 +1299,6 @@ transition: view-transition
 
 
 ---
-transition: view-transition-slide
 layout: center
 ---
 
