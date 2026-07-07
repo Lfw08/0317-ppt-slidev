@@ -80,8 +80,6 @@ layout: default
 
 
 
-::right::
-
 ## 起飞前检查
 
 <br>
