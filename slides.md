@@ -124,11 +124,13 @@ layout: default
 - 飞行中，**禁止大范围走动**
 
 ---
-
+layout: center
+---
 ![](/images/航线规则.png)
 
 ---
-
+layout: center
+---
 ![](/images/航线口令.png)
 
 ---
