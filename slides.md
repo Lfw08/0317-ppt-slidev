@@ -102,10 +102,6 @@ layout: center
 
 空中航线规则
 
-![](/images/航线规则.png)
-
-![](/images/航线口令.png)
-
 ---
 layout: default
 ---
@@ -126,6 +122,14 @@ layout: default
 
 ### 走动限制
 - 飞行中，**禁止大范围走动**
+
+---
+
+![](/images/航线规则.png)
+
+---
+
+![](/images/航线口令.png)
 
 ---
 layout: center
