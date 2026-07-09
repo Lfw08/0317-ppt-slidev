@@ -7,7 +7,7 @@ drawings:
 transition: slide-left
 mdc: true
 layout: cover
-background: public/127ce5f3a1108a1182fd931885464ace.JPG
+background: 127ce5f3a1108a1182fd931885464ace.JPG
 ---
 
 # 场地安全规范
