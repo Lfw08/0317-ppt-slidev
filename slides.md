@@ -7,12 +7,21 @@ drawings:
 transition: slide-left
 mdc: true
 layout: cover
-background: 127ce5f3a1108a1182fd931885464ace.JPG
+background: public/127ce5f3a1108a1182fd931885464ace.JPG
 ---
 
 # 场地安全规范
 
 飞行场地操作指南
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+
+
 
 ---
 layout: center
