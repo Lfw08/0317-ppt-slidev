@@ -1,5 +1,5 @@
 ---
-theme: seriph
+theme: unicorn
 title: 场地安全规范
 info: 飞行场地安全操作指南
 drawings:
