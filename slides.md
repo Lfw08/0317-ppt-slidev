@@ -1,293 +1,819 @@
 ---
-theme: default
-title: LUMEN ONE · 2026 秋季产品发布会
+theme: unicorn
+addons:
+  - slidev-component-progress
+
+title: 滑翔机挑战赛
 info: |
-  LUMEN ONE 新品发布会
-  一盏会读懂你的光
-colorSchema: dark
-transition: fade
-drawings: false
-class: lumen
+class: text-center
+drawings:
+  persist: false
+transition: view-transition
+mdc: true
+layout: cover
 ---
 
-<div class="blob b1"></div>
-<div class="blob b2"></div>
-<div class="blob b3"></div>
+<video 
+  controls 
+  src= "/video.mp4" 
+  class="mx-auto"
+/>
 
-<div class="cover-inner">
-
-<div class="eyebrow">2026 秋季产品发布会 · Shanghai</div>
-
-<h1 class="brand">LUMEN<span class="grad">.</span></h1>
-
-<p class="tagline">一盏会读懂你的光</p>
-
-<div class="cover-meta">
-  <span>NEBULA LABS</span><i></i><span>2026.10.27</span><i></i><span>19:30 CST</span>
-</div>
-
-</div>
 
 ---
 layout: center
-class: lumen
 ---
 
-<div class="stat">
-  <div class="stat-num">7<span>h</span>21<span>m</span></div>
-  <p class="stat-cap">城市居民平均每天注视屏幕的时间</p>
-  <p class="stat-more" v-click>其中 <b>86%</b> 的时间里，房间的光还是「上一次留下的样子」</p>
-</div>
-
----
-layout: default
-class: lumen
----
-
-<div class="eyebrow">PROBLEM</div>
-
-## 我们被光包围，却从未被光照亮
-
-<div class="grid-3">
-  <div class="card" v-click>
-    <div class="cn">01</div>
-    <h3>冷</h3>
-    <p>屏幕给了我们最亮的光，也给了最冷的白。夜里关掉屏幕，房间突然空了一块。</p>
-  </div>
-  <div class="card" v-click>
-    <div class="cn">02</div>
-    <h3>呆</h3>
-    <p>落地灯、台灯、氛围灯各管一段，开关散落在四处。想调一次光，要站起来三次。</p>
-  </div>
-  <div class="card" v-click>
-    <div class="cn">03</div>
-    <h3>不懂</h3>
-    <p>它们只知道亮与暗，不知道你在赶稿、在读诗，还是只想安静地坐一会儿。</p>
-  </div>
-</div>
+<audio controls src="FS2020.mp3" loop></audio>
 
 ---
 layout: center
-class: lumen
 ---
 
-<div class="statement">
-  <div class="eyebrow">OUR BELIEF</div>
-  <h2>光不该是开关，<br>而应该是一次<span class="grad">回应</span>。</h2>
-</div>
 
----
-layout: center
-class: lumen
----
+# 滑翔机挑战赛 {.inline-block.view-transition-title}
+### 北京师大二附中 第18届科技节
+###   
+#### 高二年级
+#### 2025.4.10
 
-<div class="reveal-wrap">
-  <div class="orb-stage">
-    <div class="halo"></div>
-    <div class="core"></div>
-  </div>
-  <div class="eyebrow" v-click>Introducing</div>
-  <h2 class="prod" v-click>LUMEN ONE</h2>
-  <p class="sub" v-click>首款情绪回应式桌面光源 · ¥1,299 起 · 今晚 21:00 开启预售</p>
-</div>
 
----
-layout: default
-class: lumen
----
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
 
-<div class="eyebrow">CAPABILITIES</div>
 
-## 三种能力，<span class="grad">一种陪伴</span>
 
-<div class="feat-list">
-  <div class="feat" v-click>
-    <div class="idx">01</div>
-    <div>
-      <h3>Ambient Sense <em>环境感知</em></h3>
-      <p>双光谱传感器每 40ms 采样一次房间的色温、照度与人影移动。你还没察觉变暗，光已经先亮了一点。</p>
-    </div>
-  </div>
-  <div class="feat" v-click>
-    <div class="idx">02</div>
-    <div>
-      <h3>Emotion Engine <em>情绪引擎</em></h3>
-      <p>端侧运行的轻量模型，从作息节律与交互节奏中推断「专注 / 疲惫 / 放松」三种状态，全程不上云、不留存原始数据。</p>
-    </div>
-  </div>
-  <div class="feat" v-click>
-    <div class="idx">03</div>
-    <div>
-      <h3>Living Light <em>生长光场</em></h3>
-      <p>72 组独立像素构成的柔性光场，能呼吸、能过渡、能随时间推移。它不从白色开始，而是从你此刻需要的那一点暖开始。</p>
-    </div>
-  </div>
-</div>
 
----
-layout: default
-class: lumen
----
-
-<div class="eyebrow">HOW IT WORKS</div>
-
-## 三步，让光学会理解
-
-<div class="flow">
-  <div class="step" v-click>
-    <div class="sn">01 / SENSE</div>
-    <h3>采集</h3>
-    <p>双光谱 + 毫米波，40ms 采样，全部在本地完成初步处理。</p>
-  </div>
-  <div class="arrow">→</div>
-  <div class="step" v-click>
-    <div class="sn">02 / UNDERSTAND</div>
-    <h3>理解</h3>
-    <p>端侧 3B 轻量模型，识别专注、疲惫、放松三类状态，延迟 &lt; 120ms。</p>
-  </div>
-  <div class="arrow">→</div>
-  <div class="step" v-click>
-    <div class="sn">03 / RESPOND</div>
-    <h3>回应</h3>
-    <p>光场以 12 级柔度渐变，在 1.2 秒内完成过渡，不打断、不闪烁。</p>
-  </div>
-</div>
-
----
-layout: default
-class: lumen
----
-
-<div class="eyebrow">HARDWARE</div>
-
-## 一个安静的圆，装下所有传感器
-
-<div class="spec-grid">
-  <div class="spec" v-click><span>Dimension</span><b>Ø168 × 142 mm</b></div>
-  <div class="spec" v-click><span>Weight</span><b>780 g</b></div>
-  <div class="spec" v-click><span>Light Field</span><b>72 区 · 1800–6500K</b></div>
-  <div class="spec" v-click><span>Brightness</span><b>20 – 1200 lux</b></div>
-  <div class="spec" v-click><span>Sensors</span><b>双光谱 + 毫米波</b></div>
-  <div class="spec" v-click><span>Compute</span><b>端侧 3B · 8 TOPS</b></div>
-  <div class="spec" v-click><span>Material</span><b>阳极氧化铝 + 再生织物</b></div>
-  <div class="spec" v-click><span>Price</span><b>¥1,299 起</b></div>
-</div>
-
----
-layout: default
-class: lumen
----
-
-<div class="eyebrow">ECOSYSTEM</div>
-
-## 光也可以是接口
-
-<div class="grid-3">
-  <div class="card" v-click>
-    <div class="cn">APP</div>
-    <h3>光照日记</h3>
-    <p>不给你一堆参数，只每周告诉你：这一周，你在什么光下最专注。一键回放那些时刻。</p>
-  </div>
-  <div class="card" v-click>
-    <div class="cn">API</div>
-    <h3>Open Light</h3>
-    <p>GraphQL + WebSocket 双接口，两天接入全屋智能。官方提供 Unity 与 Home Assistant 插件。</p>
-  </div>
-  <div class="card" v-click>
-    <div class="cn">MARKET</div>
-    <h3>场景市场</h3>
-    <p>与 240 位设计师共创，首批上线 120 个场景：读诗、加班、失眠、等一个人回家。</p>
-  </div>
-</div>
 
 ---
 layout: center
-class: lumen
 ---
 
-<div class="quote-wrap">
-  <div class="eyebrow">BETA VOICE</div>
-  <blockquote class="quote">「关掉屏幕之后，房间还留着一点呼吸的感觉。<br>那一刻我才发现，原来光也可以陪人。」</blockquote>
-  <div class="quote-by">— 内测用户 @阿一 · 独立设计师</div>
-</div>
+# 参赛选手 {.inline-block.view-transition-title}
 
----
-layout: default
-class: lumen
----
-
-<div class="eyebrow">PRICING</div>
-
-## 三个版本，同一个夜晚
-
-<div class="price-grid">
-  <div class="price-card" v-click>
-    <div class="pn">LUMEN ONE</div>
-    <div class="pp">¥1,299 <small>/ 标准版</small></div>
-    <p>主机 + 磁吸底座 + 1 年场景市场会员</p>
-    <p>适合桌面、床头、阅读角。</p>
-  </div>
-  <div class="price-card featured" v-click>
-    <div class="pn">LUMEN ONE PRO</div>
-    <div class="pp">¥1,899 <small>/ 专业版</small></div>
-    <p>双灯联动 + 增强毫米波 + 终身场景会员</p>
-    <p>适合工作室、双人书桌、直播场景。</p>
-    <span class="tag">MOST LOVED</span>
-  </div>
-  <div class="price-card" v-click>
-    <div class="pn">LUMEN STUDIO</div>
-    <div class="pp">¥3,299 <small>/ 套件</small></div>
-    <p>桌面 ×2 + 环境灯 ×1 + 共创权限</p>
-    <p>适合团队与创作空间。</p>
-  </div>
-</div>
-
----
-layout: default
-class: lumen
----
-
-<div class="eyebrow">ROADMAP</div>
-
-## 接下来的十二个月
-
-<div class="timeline">
-  <div class="tl-item" v-click>
-    <div class="dot"></div>
-    <div class="tw">2026.10.27</div>
-    <h4>预售开启</h4>
-    <p>发布会结束后 21:00，官网与门店同步。</p>
-  </div>
-  <div class="tl-item" v-click>
-    <div class="dot"></div>
-    <div class="tw">2026.11.11</div>
-    <h4>首批发货</h4>
-    <p>顺丰次日达，首批 8,000 台。</p>
-  </div>
-  <div class="tl-item" v-click>
-    <div class="dot"></div>
-    <div class="tw">2027.01</div>
-    <h4>场景市场开放</h4>
-    <p>设计师上传收益分成 70%。</p>
-  </div>
-  <div class="tl-item" v-click>
-    <div class="dot"></div>
-    <div class="tw">2027.Q2</div>
-    <h4>Lumen OS 2.0</h4>
-    <p>多设备协同，全屋光场联动。</p>
-  </div>
-</div>
 
 ---
 layout: center
-class: lumen
 ---
 
-<div class="blob b1"></div>
-<div class="blob b2"></div>
+# 参赛选手 {.inline-block.view-transition-title}
 
-<div class="end">
-  <div class="eyebrow">THANK YOU</div>
-  <h2>把光，<span class="grad">还给生活。</span></h2>
-  <div class="end-meta">lumen.lab &nbsp;·&nbsp; @lumenone &nbsp;·&nbsp; #LUMENONE</div>
+<div class="multi-column-table">
+  <!-- 三个表格列容器 -->
+  <div class="table-column" v-for="(chunk, index) in chunkedRows" :key="index">
+    <table>
+      <tr v-for="(row, rowIndex) in chunk" :key="row.id" :class="'fade-in-row'">
+        <td v-for="(cell, cellIndex) in row.cells" :key="cellIndex">{{ cell }}</td>
+      </tr>
+    </table>
+  </div>
 </div>
+
+<script setup>
+import { ref, computed, onMounted, nextTick } from 'vue'
+
+// 原始表格数据
+const originalRows = ref([
+  { id: 1, cells: ['高二1班', '周子珺', '蔺一铭'] },
+  { id: 2, cells: ['高二2班', '徐上', '周新洋'] },
+  { id: 3, cells: ['高二3班', '张睿达', '张迅宁'] },
+  { id: 4, cells: ['高二4班', '王曦乐', '胡婉瑄'] },
+  { id: 5, cells: ['高二5班', '武成康', '张天泽'] },
+  { id: 6, cells: ['高二6班', '王紫云', '石轩宁'] },
+  { id: 7, cells: ['高二7班', '李皓轩', '戚家绮'] },
+  { id: 8, cells: ['高二8班', '单奕超', '朱钰安'] },
+  { id: 9, cells: ['高二9班', '汪楠翔', ''] },
+  { id: 10, cells: ['高二10班', '李晓瑜', '张佳宇'] },
+  { id: 11, cells: ['高二11班', '王君赫', '贺宣壹'] },
+  { id: 12, cells: ['高二12班', '李北宜', '吴亦桐'] },
+  { id: 13, cells: ['高二13班', '徐子谦', '曹天泽'] },
+  { id: 14, cells: ['高二14班', '杨皓晨', '蔡栩安'] },
+])
+
+// 这一页不需要打乱
+const shuffleArray = (array) => {
+  
+  return array
+}
+
+// 创建响应式的随机排序数据
+const shuffledRows = ref([])
+
+// 分块计算属性
+const chunkedRows = computed(() => {
+  const chunkSize = Math.ceil(shuffledRows.value.length / 3)
+  return [
+    shuffledRows.value.slice(0, chunkSize),
+    shuffledRows.value.slice(chunkSize, chunkSize * 2),
+    shuffledRows.value.slice(chunkSize * 2),
+  ]
+})
+
+onMounted(() => {
+  shuffledRows.value = shuffleArray([...originalRows.value])
+  
+  nextTick(() => {
+    const rows = document.querySelectorAll('.fade-in-row')
+    rows.forEach((row, index) => {
+      row.style.animationDelay = `${index * 0.15}s`
+    })
+  })
+})
+</script>
+
+<style>
+.multi-column-table {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  gap: 20px; /* 列间距 */
+  height: 100%; /* 使用父容器的全部高度 */
+}
+
+.table-column {
+  flex: 1;
+  overflow-y: auto; /* 内容过多时显示滚动条 */
+  border-right: 1px solid #eee; /* 可选分隔线 */
+  padding-right: 15px;
+}
+
+.table-column:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  font-size: 0.9em; /* 适当缩小字体 */
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏超出部分 */
+  text-overflow: ellipsis; /* 超出部分显示省略号 */
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+/* 滚动条样式 */
+.table-column::-webkit-scrollbar {
+  width: 6px;
+}
+.table-column::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+/* 定义淡入动画 */
+.fade-in-row {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.15s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+---
+layout: center
+---
+
+# 比赛顺序 {.inline-block.view-transition-title}
+
+
+---
+layout: center
+---
+
+# 比赛顺序 {.inline-block.view-transition-title}
+
+<div class="multi-column-table">
+  <!-- 三个表格列容器 -->
+  <div class="table-column" v-for="(chunk, index) in chunkedRows" :key="index">
+    <table>
+      <tr v-for="(row, rowIndex) in chunk" :key="row.id" :class="'fade-in-row'">
+        <td v-for="(cell, cellIndex) in row.cells" :key="cellIndex">{{ cell }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script setup>
+import { ref, computed, onMounted, nextTick } from 'vue'
+
+// 原始表格数据
+const originalRows = ref([
+  { id: 1, cells: ['高二1班', '周子珺', '蔺一铭'] },
+  { id: 2, cells: ['高二2班', '徐上', '周新洋'] },
+  { id: 3, cells: ['高二3班', '张睿达', '张迅宁'] },
+  { id: 4, cells: ['高二4班', '王曦乐', '胡婉瑄'] },
+  { id: 5, cells: ['高二5班', '武成康', '张天泽'] },
+  { id: 6, cells: ['高二6班', '王紫云', '石轩宁'] },
+  { id: 7, cells: ['高二7班', '李皓轩', '戚家绮'] },
+  { id: 8, cells: ['高二8班', '单奕超', '朱钰安'] },
+  { id: 9, cells: ['高二9班', '汪楠翔', ''] },
+  { id: 10, cells: ['高二10班', '李晓瑜', '张佳宇'] },
+  { id: 11, cells: ['高二11班', '王君赫', '贺宣壹'] },
+  { id: 12, cells: ['高二12班', '李北宜', '吴亦桐'] },
+  { id: 13, cells: ['高二13班', '徐子谦', '曹天泽'] },
+  { id: 14, cells: ['高二14班', '杨皓晨', '蔡栩安'] },
+])
+
+// Fisher-Yates 洗牌算法
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
+  }
+  return array
+}
+
+// 创建响应式的随机排序数据
+const shuffledRows = ref([])
+
+// 分块计算属性
+const chunkedRows = computed(() => {
+  const chunkSize = Math.ceil(shuffledRows.value.length / 3)
+  return [
+    shuffledRows.value.slice(0, chunkSize),
+    shuffledRows.value.slice(chunkSize, chunkSize * 2),
+    shuffledRows.value.slice(chunkSize * 2),
+  ]
+})
+
+onMounted(() => {
+  shuffledRows.value = shuffleArray([...originalRows.value])
+  localStorage.setItem('shuffledRows', JSON.stringify(shuffledRows.value))
+  nextTick(() => {
+    const rows = document.querySelectorAll('.fade-in-row')
+    rows.forEach((row, index) => {
+      row.style.animationDelay = `${index * 0.15}s`
+    })
+  })
+})
+</script>
+
+<style>
+.multi-column-table {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  gap: 20px; /* 列间距 */
+  height: 100%; /* 使用父容器的全部高度 */
+}
+
+.table-column {
+  flex: 1;
+  overflow-y: auto; /* 内容过多时显示滚动条 */
+  border-right: 1px solid #eee; /* 可选分隔线 */
+  padding-right: 15px;
+}
+
+.table-column:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  font-size: 0.9em; /* 适当缩小字体 */
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏超出部分 */
+  text-overflow: ellipsis; /* 超出部分显示省略号 */
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+/* 滚动条样式 */
+.table-column::-webkit-scrollbar {
+  width: 6px;
+}
+.table-column::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+/* 定义淡入动画 */
+.fade-in-row {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.15s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+
+---
+layout: center
+---
+
+<Progress level="1"/>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title = ref('')
+const subtitle = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 0) {
+    const firstRow = storedRows[0]?.cells || []
+    const secondRow = storedRows[1]?.cells || []
+    title.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="2"/>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title1 = ref('')
+const subtitle1 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 1) {
+    const firstRow = storedRows[1]?.cells || []
+    const secondRow = storedRows[2]?.cells || []
+    title1.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle1.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title1 }}{.inline-block.view-transition-title}
+##
+### Next: {{ subtitle1 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="3"/>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title2 = ref('')
+const subtitle2 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 2) {
+    const firstRow = storedRows[2]?.cells || []
+    const secondRow = storedRows[3]?.cells || []
+    title2.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle2.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title2 }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle2 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="4"/>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title3 = ref('')
+const subtitle3 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 3) {
+    const firstRow = storedRows[3]?.cells || []
+    const secondRow = storedRows[4]?.cells || []
+    title3.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle3.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title3 }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle3 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="5"/>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title4 = ref('')
+const subtitle4 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 4) {
+    const firstRow = storedRows[4]?.cells || []
+    const secondRow = storedRows[5]?.cells || []
+    title4.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle4.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title4 }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle4 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="6"/>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title5 = ref('')
+const subtitle5 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 5) {
+    const firstRow = storedRows[5]?.cells || []
+    const secondRow = storedRows[6]?.cells || []
+    title5.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle5.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title5 }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle5 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="7"/>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title6 = ref('')
+const subtitle6 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 6) {
+    const firstRow = storedRows[6]?.cells || []
+    const secondRow = storedRows[7]?.cells || []
+    title6.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle6.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title6 }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle6 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="8"/>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title7 = ref('')
+const subtitle7 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 7) {
+    const firstRow = storedRows[7]?.cells || []
+    const secondRow = storedRows[8]?.cells || []
+    title7.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle7.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title7 }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle7 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="9"/>
+
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title8 = ref('')
+const subtitle8 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 8) {
+    const firstRow = storedRows[8]?.cells || []
+    const secondRow = storedRows[9]?.cells || []
+    title8.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle8.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title8 }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle8 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="10"/>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title9 = ref('')
+const subtitle9 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 9) {
+    const firstRow = storedRows[9]?.cells || []
+    const secondRow = storedRows[10]?.cells || []
+    title9.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle9.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title9 }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle9 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="11"/>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title10 = ref('')
+const subtitle10 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 10) {
+    const firstRow = storedRows[10]?.cells || []
+    const secondRow = storedRows[11]?.cells || []
+    title10.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle10.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title10 }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle10 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="12"/>
+
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title11 = ref('')
+const subtitle11 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 11) {
+    const firstRow = storedRows[11]?.cells || []
+    const secondRow = storedRows[12]?.cells || []
+    title11.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle11.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title11 }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle11 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="13"/>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title12 = ref('')
+const subtitle12 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 12) {
+    const firstRow = storedRows[12]?.cells || []
+    const secondRow = storedRows[13]?.cells || []
+    title12.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle12.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title12 }} {.inline-block.view-transition-title}
+##
+### Next: {{ subtitle12 }} {.inline-block.view-transition-subtitle}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
+layout: center
+---
+
+<Progress level="14"/>
+
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const title13 = ref('')
+const subtitle13 = ref('')
+
+onMounted(() => {
+  const storedRows = JSON.parse(localStorage.getItem('shuffledRows')) || []
+  if (storedRows.length > 13) {
+    const firstRow = storedRows[13]?.cells || []
+    const secondRow = storedRows[14]?.cells || []
+    title13.value = `${firstRow[0]} - ${firstRow[1]}   ${firstRow[2]}`
+    subtitle13.value = `${secondRow[0]} - ${secondRow[1]}   ${secondRow[2]}`
+  }
+})
+</script>
+
+# {{ title13 }} {.inline-block.view-transition-title}
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+
+---
+layout: cover
+---
+
+# 滑翔机挑战赛 {.inline-block.view-transition-title}
+## 2025.4.10
+### 高二年级
+
+<iframe
+  src="index.html"
+  style="transform: scale(4);"
+  class="top-145 right--28 absolute"
+></iframe>
+
+---
