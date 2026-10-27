@@ -5,6 +5,7 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
+    "dev:launch": "slidev lumen-launch.md --open --port 3031",
     "export": "slidev export"
   },
   "dependencies": {

@@ -1,4 +1,5 @@
 /* Global style overrides for excali-slide theme */
+@import "./lumen.css";
 .slidev-layout {
   font-size: 0.85rem !important;
 }
